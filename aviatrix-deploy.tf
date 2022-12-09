@@ -37,7 +37,7 @@ resource "azurerm_network_interface" "aviatrix_controller_nic" {
   ip_configuration {
     name                          = "${var.controller_name}-nic"
     private_ip_address_allocation = "Dynamic"
-    subnet_id                     = azurerm_subnet.hub-1-aviatrix-controller-subnet
+    subnet_id                     = azurerm_subnet.hub-1-aviatrix-controller-subnet.id
     public_ip_address_id          = azurerm_public_ip.aviatrix_controller_public_ip.id
   }
 }
