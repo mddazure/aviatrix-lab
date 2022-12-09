@@ -47,7 +47,7 @@ resource "azurerm_subnet" "bastion-hub-1-subnet" {
 resource "azurerm_virtual_network" "spoke-1-vnet" {
   name                = "spoke-1-vnet"
   location            = var.location-spoke-1
-  resource_group_name = azurerm_resource_group.aviatrix-hub-rg.name
+  resource_group_name = azurerm_resource_group.aviatrix-spoke-rg.name
   address_space       = ["10.1.0.0/16"]
 
   tags = {
