@@ -33,12 +33,6 @@ variable "controller_name" {
   
 }
 
-variable "incoming_ssl_cidr" {
-    description = "source ip"
-    default = "217.121.228.158"
-  
-}
-
 variable "controller_virtual_machine_admin_username" {
   type        = string
   description = "Admin Username for the controller virtual machine."
@@ -59,5 +53,6 @@ variable "controller_virtual_machine_size" {
 
 variable "incoming_ssl_cidr" {
   type        = list(string)
+  default = [ "217.121.0.0/16" ]
   description = "Incoming cidr for security group used by controller"
 }
