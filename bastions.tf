@@ -26,7 +26,7 @@ resource "azurerm_bastion_host" "bastion-spoke-1" {
 #######################################################################
 ## Create Bastion Hub
 #######################################################################
-resource "azurerm_public_ip" "bastion-hub-pubip" {
+resource "azurerm_public_ip" "bastion-hub-1-pubip" {
   name                = "bastion-hub-1-pubip"
   location            = var.location-hub
   resource_group_name = azurerm_resource_group.aviatrix-hub-rg.name
