@@ -421,7 +421,7 @@ resource "azurerm_windows_virtual_machine" "spoke-2-vm" {
 resource "azurerm_virtual_machine_extension" "install-iis-spoke-2-vm" {
     
   name                 = "install-iis-spoke-2-vm"
-  virtual_machine_id   = azurerm_windows_virtual_machine.spoke-1-vm.id
+  virtual_machine_id   = azurerm_windows_virtual_machine.spoke-2-vm.id
   publisher            = "Microsoft.Compute"
   type                 = "CustomScriptExtension"
   type_handler_version = "1.9"
@@ -468,7 +468,7 @@ resource "azurerm_windows_virtual_machine" "spoke-3-vm" {
 resource "azurerm_virtual_machine_extension" "install-iis-spoke-3-vm" {
     
   name                 = "install-iis-spoke-3-vm"
-  virtual_machine_id   = azurerm_windows_virtual_machine.spoke-1-vm.id
+  virtual_machine_id   = azurerm_windows_virtual_machine.spoke-3-vm.id
   publisher            = "Microsoft.Compute"
   type                 = "CustomScriptExtension"
   type_handler_version = "1.9"
@@ -515,7 +515,7 @@ resource "azurerm_windows_virtual_machine" "spoke-4-vm" {
 resource "azurerm_virtual_machine_extension" "install-iis-spoke-4-vm" {
     
   name                 = "install-iis-spoke-4-vm"
-  virtual_machine_id   = azurerm_windows_virtual_machine.spoke-1-vm.id
+  virtual_machine_id   = azurerm_windows_virtual_machine.spoke-4-vm.id
   publisher            = "Microsoft.Compute"
   type                 = "CustomScriptExtension"
   type_handler_version = "1.9"
