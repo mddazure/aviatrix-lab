@@ -165,7 +165,7 @@ resource "azurerm_virtual_network" "spoke-4-vnet" {
   }
 }
 #######################################################################
-## Create Subnets - Spoke 1
+## Create Subnets - Spoke 4
 #######################################################################
 resource "azurerm_subnet" "spoke-4-aviatrix-subnet" {
   name                 = "aviatrixSubnet"
@@ -173,13 +173,13 @@ resource "azurerm_subnet" "spoke-4-aviatrix-subnet" {
   virtual_network_name = azurerm_virtual_network.spoke-4-vnet.name
   address_prefixes       = ["10.4.0.0/24"]
 }
-resource "azurerm_subnet" "spoke-1-vm-subnet" {
+resource "azurerm_subnet" "spoke-4-vm-subnet" {
   name                 = "vmSubnet"
   resource_group_name  = azurerm_resource_group.aviatrix-spoke-rg.name
   virtual_network_name = azurerm_virtual_network.spoke-4-vnet.name
   address_prefixes       = ["10.4.1.0/24"]
 }
-resource "azurerm_subnet" "bastion-spoke-1-subnet" {
+resource "azurerm_subnet" "bastion-spoke-4-subnet" {
   name                 = "AzureBastionSubnet"
   resource_group_name  = azurerm_resource_group.aviatrix-spoke-rg.name
   virtual_network_name = azurerm_virtual_network.spoke-4-vnet.name
