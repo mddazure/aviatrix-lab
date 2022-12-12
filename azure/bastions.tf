@@ -1,10 +1,17 @@
+variable "hub-rg-name" {
+  type = string
+  }
+variable "spoke-rg-name" {
+  type = string
+}
+
 #######################################################################
 ## Create Bastion spoke-1
 #######################################################################
 resource "azurerm_public_ip" "bastion-spoke-1-pubip" {
   name                = "bastion-spoke-1-pubip"
   location            = var.location-spoke-1
-  resource_group_name = azurerm_resource_group.aviatrix-spoke-rg.name
+  resource_group_name = spoke-rg-name
   allocation_method   = "Static"
   sku                 = "Standard"
 }
@@ -12,7 +19,7 @@ resource "azurerm_public_ip" "bastion-spoke-1-pubip" {
 resource "azurerm_bastion_host" "bastion-spoke-1" {
   name                = "bastion-spoke-1"
   location            = var.location-spoke-1
-  resource_group_name = azurerm_resource_group.aviatrix-spoke-rg.name
+  resource_group_name = spoke-rg-name
   sku                 = "Standard"
   ip_connect_enabled =  true
   shareable_link_enabled = true
@@ -29,7 +36,7 @@ resource "azurerm_bastion_host" "bastion-spoke-1" {
 resource "azurerm_public_ip" "bastion-spoke-2-pubip" {
   name                = "bastion-spoke-2-pubip"
   location            = var.location-spoke-2
-  resource_group_name = azurerm_resource_group.aviatrix-spoke-rg.name
+  resource_group_name = spoke-rg-name
   allocation_method   = "Static"
   sku                 = "Standard"
 }
@@ -37,7 +44,7 @@ resource "azurerm_public_ip" "bastion-spoke-2-pubip" {
 resource "azurerm_bastion_host" "bastion-spoke-2" {
   name                = "bastion-spoke-2"
   location            = var.location-spoke-2
-  resource_group_name = azurerm_resource_group.aviatrix-spoke-rg.name
+  resource_group_name = spoke-rg-name
   sku                 = "Standard"
   ip_connect_enabled =  true
   shareable_link_enabled = true
@@ -54,7 +61,7 @@ resource "azurerm_bastion_host" "bastion-spoke-2" {
 resource "azurerm_public_ip" "bastion-spoke-3-pubip" {
   name                = "bastion-spoke-3-pubip"
   location            = var.location-spoke-3
-  resource_group_name = azurerm_resource_group.aviatrix-spoke-rg.name
+  resource_group_name = spoke-rg-name
   allocation_method   = "Static"
   sku                 = "Standard"
 }
@@ -62,7 +69,7 @@ resource "azurerm_public_ip" "bastion-spoke-3-pubip" {
 resource "azurerm_bastion_host" "bastion-spoke-3" {
   name                = "bastion-spoke-3"
   location            = var.location-spoke-3
-  resource_group_name = azurerm_resource_group.aviatrix-spoke-rg.name
+  resource_group_name = spoke-rg-name
   sku                 = "Standard"
   ip_connect_enabled =  true
   shareable_link_enabled = true
@@ -79,7 +86,7 @@ resource "azurerm_bastion_host" "bastion-spoke-3" {
 resource "azurerm_public_ip" "bastion-spoke-4-pubip" {
   name                = "bastion-spoke-4-pubip"
   location            = var.location-spoke-4
-  resource_group_name = azurerm_resource_group.aviatrix-spoke-rg.name
+  resource_group_name = spoke-rg-name
   allocation_method   = "Static"
   sku                 = "Standard"
 }
@@ -87,7 +94,7 @@ resource "azurerm_public_ip" "bastion-spoke-4-pubip" {
 resource "azurerm_bastion_host" "bastion-spoke-4" {
   name                = "bastion-spoke-4"
   location            = var.location-spoke-4
-  resource_group_name = azurerm_resource_group.aviatrix-spoke-rg.name
+  resource_group_name = spoke-rg-name
   sku                 = "Standard"
   ip_connect_enabled =  true
   shareable_link_enabled = true
@@ -104,7 +111,7 @@ resource "azurerm_bastion_host" "bastion-spoke-4" {
 resource "azurerm_public_ip" "bastion-hub-1-pubip" {
   name                = "bastion-hub-1-pubip"
   location            = var.location-hub
-  resource_group_name = azurerm_resource_group.aviatrix-hub-rg.name
+  resource_group_name = hub-rg-name
   allocation_method   = "Static"
   sku                 = "Standard"
 }
@@ -112,7 +119,7 @@ resource "azurerm_public_ip" "bastion-hub-1-pubip" {
 resource "azurerm_bastion_host" "bastion-hub-1" {
   name                = "bastion-hub-1"
   location            = var.location-hub
-  resource_group_name = azurerm_resource_group.aviatrix-hub-rg.name
+  resource_group_name = hub-rg-name
   sku                 = "Standard"
   ip_connect_enabled =  true
   shareable_link_enabled = true
