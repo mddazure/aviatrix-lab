@@ -3,14 +3,12 @@ provider "azurerm" {
 }
 
 
-
-
 #######################################################################
 ## Create Resource Group
 #######################################################################
 
 resource "azurerm_resource_group" "aviatrix-spoke-rg" {
-  name     = "aviatrix-spoke-rg"
+  name     = var.spoke-rg-name
   location = var.location-spoke-1
  tags = {
     environment = "spoke"
@@ -19,7 +17,7 @@ resource "azurerm_resource_group" "aviatrix-spoke-rg" {
   }
 }
 resource "azurerm_resource_group" "aviatrix-hub-rg" {
-  name     = "aviatrix-hub-rg"
+  name     = var.hub-rg-name
   location = var.location-hub
  tags = {
     environment = "hub"
