@@ -18,6 +18,17 @@ variable "controller-ip" {
   type = string  
 }
 
+variable "controller_admin_username" {
+  type        = string
+  description = "Admin Username for the controller."
+  default     = "admin"
+}
+variable "controller_admin_password" {
+  type        = string
+  description = "Admin Password for the controller."
+  default     = "Nienke0405%"
+}
+
 provider "aviatrix" {
   controller_ip = var.controller-ip
   username = var.controller_admin_username
