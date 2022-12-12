@@ -2,20 +2,7 @@ provider "azurerm" {
   features {}
 }
 
-terraform {
-    required_providers {
-    aviatrix = {
-      source = "AviatrixSystems/aviatrix"
-      version = "3.0.0"
-    }
-  }
-}
 
-provider "aviatrix" {
-  controller_ip = azurerm_public_ip.aviatrix_controller_public_ip.ip_address
-  username = var.controller_admin_username
-  password = var.controller_admin_password  
-}
 
 
 #######################################################################
@@ -41,13 +28,3 @@ resource "azurerm_resource_group" "aviatrix-hub-rg" {
   }
 }
 
-module "azure-deploy" {
-  source = "./azure"
-}
-
-module "aviatrix-deploy" {
-  depends_on = [
-    module.azure-deploy
-  ]
-  source = "./aviatrix-deploy"
-  }
