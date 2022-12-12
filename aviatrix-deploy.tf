@@ -95,25 +95,26 @@ resource "azurerm_linux_virtual_machine" "aviatrix_controller_vm" {
   }
 }
 resource "aviatrix_transit_gateway" "transit_gw" {
-  cloud_type = "Azure"
-  vpc_reg = var.location-hub
-  vpc_id = azurerm_virtual_network.hub-1-vnet.id
-  subnet = azurerm_subnet.hub-1-aviatrix-gateway-subnet.address_prefixes
-  gw_name = "transit-gw-hub-1"
-  allocate_new_eip = true
+  cloud_type        = 8
+  account_name      = "MdD_1_non_prod"
+  vpc_reg           = var.location-hub
+  vpc_id            = azurerm_virtual_network.hub-1-vnet.id
+  subnet            = azurerm_subnet.hub-1-aviatrix-gateway-subnet.address_prefixes
+  gw_name           = "transit-gw-hub-1"
+  allocate_new_eip  = true
   connected_transit = true
   enable_bgp_over_lan = true
-  bgp_lan_interfaces_count = 1
 }
 
 resource "aviatrix_spoke_gateway" "spoke_1_gw" {
-  cloud_type = "Azure"
-  vpc_reg = var.location-spoke-1
-  vpc_id = azurerm_virtual_network.spoke-1-vnet.id
-  subnet = azurerm_subnet.spoke-1-aviatrix-gateway-subnet.address_prefixes
-  gw_name = "spoke-gw-1"
-  allocate_new_eip = true
+  cloud_type        = 8
+  account_name      = "MdD_1_non_prod"
+  vpc_reg           = var.location-spoke-1
+  vpc_id            = azurerm_virtual_network.spoke-1-vnet.id
+  subnet            = azurerm_subnet.spoke-1-aviatrix-subnet.address_prefixes
+  gw_size           = "Standard_B1ms"
+  gw_name           = "spoke-gw-1"
+  allocate_new_eip  = true
   connected_transit = true
   enable_bgp_over_lan = true
-  bgp_lan_interfaces_count = 1
 }
