@@ -28,3 +28,11 @@ resource "azurerm_resource_group" "aviatrix-hub-rg" {
   }
 }
 
+module "azure-deploy" {
+  source = "./azure"
+}
+
+module "aviatrix-deploy" {
+  source = "./aviatrix"
+  controller-ip = module.azure-deploy.controller-ip  
+  }
