@@ -26,7 +26,7 @@ resource "azurerm_subnet" "hub-1-aviatrix-controller-subnet" {
   address_prefixes       = ["10.0.0.0/24"]
 }
 resource "azurerm_subnet" "hub-1-aviatrix-gateway-subnet" {
-  name                 = "aviatrixGatewaySubnet"
+  name                 = "aviatrixGWSubnet"
   resource_group_name  = var.hub-rg-name
   virtual_network_name = azurerm_virtual_network.hub-1-vnet.name
   address_prefixes       = ["10.3.0.0/24"]
