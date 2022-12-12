@@ -1,18 +1,7 @@
 provider "azurerm" {
   features {}
 }
-variable "location-hub" {
-  description = "Location to deploy hub"
-  type        = string
-  //default     = "swedencentral"
-default = "westeurope"
-}
-variable "location-spoke-1" {
-  description = "Location to deploy spoke-1"
-  type        = string
-  //default     = "swedencentral"
-default = "westeurope"
-}
+
 
 
 
