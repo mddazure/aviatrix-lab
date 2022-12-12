@@ -1,7 +1,7 @@
-variable "var.hub-rg-name" {
+variable "hub-rg-name" {
   type = string
   }
-variable "var.spoke-rg-name" {
+variable "spoke-rg-name" {
   type = string
 }
 
