@@ -100,9 +100,9 @@ resource "aviatrix_transit_gateway" "transit_gw" {
   vpc_reg           = var.location-hub
   vpc_id            = azurerm_virtual_network.hub-1-vnet.id
   subnet            = azurerm_subnet.hub-1-aviatrix-gateway-subnet.address_prefixes
+  gw_size           = "Standard_B1ms"
   gw_name           = "transit-gw-hub-1"
   allocate_new_eip  = true
-  connected_transit = true
   enable_bgp_over_lan = true
 }
 
@@ -116,5 +116,4 @@ resource "aviatrix_spoke_gateway" "spoke_1_gw" {
   gw_name           = "spoke-gw-1"
   allocate_new_eip  = true
   connected_transit = true
-  enable_bgp_over_lan = true
 }
