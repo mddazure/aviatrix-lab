@@ -7,28 +7,6 @@ terraform {
   }
 }
 
-variable "hub-rg-name" {
-  type = string
-  }
-variable "spoke-rg-name" {
-  type = string
-}
-
-variable "controller-ip" {
-  type = string  
-}
-
-variable "controller_admin_username" {
-  type        = string
-  description = "Admin Username for the controller."
-  default     = "admin"
-}
-variable "controller_admin_password" {
-  type        = string
-  description = "Admin Password for the controller."
-  default     = "Nienke0405%"
-}
-
 provider "aviatrix" {
   controller_ip = azurerm_public_ip.aviatrix_controller_public_ip
   username = var.controller_admin_username
