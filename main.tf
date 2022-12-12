@@ -40,9 +40,14 @@ resource "azurerm_resource_group" "aviatrix-hub-rg" {
     lab         = "aviatrix"
   }
 }
+
+module "azure-deploy" {
+  source = "./azure"
+}
+
 module "aviatrix-deploy" {
   depends_on = [
-    azurerm_public_ip.aviatrix_controller_public_ip
+    module.azure-deploy
   ]
   source = "./aviatrix-deploy"
   }
