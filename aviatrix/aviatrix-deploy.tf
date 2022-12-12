@@ -7,6 +7,13 @@ terraform {
   }
 }
 
+variable "hub-rg-name" {
+  type = string
+  }
+variable "spoke-rg-name" {
+  type = string
+}
+
 variable "controller-ip" {
   type = string  
 }

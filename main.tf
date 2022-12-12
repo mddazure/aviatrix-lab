@@ -30,9 +30,13 @@ resource "azurerm_resource_group" "aviatrix-hub-rg" {
 
 module "azure-deploy" {
   source = "./azure"
+  hub-rg-name = azurerm_resource_group.aviatrix-hub-rg.name
+  spoke-rg-name = azurerm_resource_group.aviatrix-spoke-rg.name
 }
 
 module "aviatrix-deploy" {
   source = "./aviatrix"
   controller-ip = module.azure-deploy.controller-ip  
+  hub-rg-name = azurerm_resource_group.aviatrix-hub-rg.name
+  spoke-rg-name = azurerm_resource_group.aviatrix-spoke-rg.name
   }
