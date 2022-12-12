@@ -1,5 +1,11 @@
-
-
+terraform {
+    required_providers {
+    aviatrix = {
+      source = "AviatrixSystems/aviatrix"
+      version = "3.0.0"
+    }
+  }
+}
 
 resource "aviatrix_transit_gateway" "transit_gw" {
   cloud_type        = 8
