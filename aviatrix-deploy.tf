@@ -1,3 +1,18 @@
+terraform {
+    required_providers {
+    aviatrix = {
+      source = "AviatrixSystems/aviatrix"
+      version = "2.20.1"
+    }
+  }
+}
+
+provider "aviatrix" {
+  controller_ip = azurerm_public_ip.aviatrix_controller_public_ip.ip_address
+  username = var.controller_admin_username
+  password = var.controller_admin_password  
+}
+
 #######################################################################
 ## Create Controller Public IP Address
 #######################################################################
@@ -78,4 +93,27 @@ resource "azurerm_linux_virtual_machine" "aviatrix_controller_vm" {
     product   = "aviatrix-bundle-payg"
     publisher = "aviatrix-systems"
   }
+}
+resource "aviatrix_transit_gateway" "transit_gw" {
+  cloud_type = "Azure"
+  vpc_reg = var.location-hub
+  vpc_id = azurerm_virtual_network.hub-1-vnet.id
+  subnet = azurerm_subnet.hub-1-aviatrix-gateway-subnet.address_prefixes
+  gw_name = "transit-gw-hub-1"
+  allocate_new_eip = true
+  connected_transit = true
+  enable_bgp_over_lan = true
+  bgp_lan_interfaces_count = 1
+}
+
+resource "aviatrix_spoke_gateway" "spoke_1_gw" {
+  cloud_type = "Azure"
+  vpc_reg = var.location-spoke-1
+  vpc_id = azurerm_virtual_network.spoke-1-vnet.id
+  subnet = azurerm_subnet.spoke-1-aviatrix-gateway-subnet.address_prefixes
+  gw_name = "spoke-gw-1"
+  allocate_new_eip = true
+  connected_transit = true
+  enable_bgp_over_lan = true
+  bgp_lan_interfaces_count = 1
 }
