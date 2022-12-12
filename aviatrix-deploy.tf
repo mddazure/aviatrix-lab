@@ -115,5 +115,4 @@ resource "aviatrix_spoke_gateway" "spoke_1_gw" {
   gw_size           = "Standard_B1ms"
   gw_name           = "spoke-gw-1"
   allocate_new_eip  = true
-  connected_transit = true
 }
