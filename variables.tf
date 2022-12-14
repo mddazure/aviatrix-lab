@@ -50,3 +50,7 @@ variable "vmsize" {
   description = "Size of the VMs"
   default     = "Standard_D2s_v3"
 }
+variable "controller_ip" {
+  description   = "public ip of controller"
+  default       = "52.178.40.245"
+}
