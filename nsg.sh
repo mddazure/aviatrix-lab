@@ -1,4 +1,5 @@
-for ((;;)); do
+for ((;;))
+do
     echo "removing nsg"
     az network vnet subnet update -g aviatrix-hub-rg --vnet-name hub-1-vnet --name aviatrixControllerSubnet --network-security-group ""
     az network vnet subnet update -g aviatrix-hub-rg --vnet-name hub-1-vnet --name aviatrixGWSubnet --network-security-group ""
