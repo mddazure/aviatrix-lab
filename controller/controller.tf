@@ -21,7 +21,7 @@ resource "azurerm_virtual_network" "controller-vnet" {
 resource "azurerm_subnet" "aviatrix-controller-subnet" {
   name                 = "aviatrixControllerSubnet"
   resource_group_name  = var.controller-rg-name
-  virtual_network_name = azurerm_virtual_network.controller-vnet
+  virtual_network_name = azurerm_virtual_network.controller-vnet.name
   address_prefixes       = ["10.100.0.0/24"]
 }
 resource "azurerm_subnet" "controller-vm-subnet" {
