@@ -54,3 +54,13 @@ variable "controller_ip" {
   description   = "public ip of controller"
   default       = "52.178.40.245"
 }
+variable "controller_admin_username" {
+  type        = string
+  description = "Admin Username for the controller."
+  default     = "admin"
+}
+variable "controller_admin_password" {
+  type        = string
+  description = "Admin Password for the controller."
+  default     = "Nienke0405%"
+}
