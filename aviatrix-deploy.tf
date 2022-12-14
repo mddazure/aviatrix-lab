@@ -6,13 +6,11 @@ terraform {
     }
   }
 }
-
 provider "aviatrix" {
-  controller_ip = azurerm_public_ip.aviatrix_controller_public_ip.ip_address
+  controller_ip = var.controller-ip
   username = var.controller_admin_username
   password = var.controller_admin_password  
 }
-
 resource "aviatrix_transit_gateway" "transit_gw" {
   cloud_type        = 8
   account_name      = "MdD_1_non_prod"

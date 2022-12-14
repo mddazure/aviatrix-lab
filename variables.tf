@@ -6,7 +6,6 @@ variable "spoke-rg-name" {
   type = string
   default = "aviatrix-spoke-rg"
 }
-
 variable "location-hub" {
   description = "Location to deploy hub"
   type        = string
