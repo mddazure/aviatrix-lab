@@ -1,7 +1,7 @@
 for ((;;))
 do
     echo "removing nsg"
-    az network vnet subnet update -g aviatrix-hub-rg --vnet-name hub-1-vnet --name aviatrixControllerSubnet --network-security-group ""
+    az network vnet subnet update -g aviatrix-controller-rg --vnet-name controller-vnet --name aviatrixControllerSubnet --network-security-group ""
     az network vnet subnet update -g aviatrix-hub-rg --vnet-name hub-1-vnet --name aviatrixGWSubnet --network-security-group ""
     az network vnet subnet update -g aviatrix-spoke-rg --vnet-name spoke-1-vnet --name aviatrixSubnet --network-security-group ""
     az network vnet subnet update -g aviatrix-spoke-rg --vnet-name spoke-1-vnet --name vmSubnet --network-security-group ""
