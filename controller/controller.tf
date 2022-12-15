@@ -146,7 +146,7 @@ resource "azurerm_network_security_group" "aviatrix_copilot_nsg" {
     priority                   = "200"
     protocol                   = "Udp"
     source_port_range          = "*"
-    destination_port_range     = ["5000","31283"]
+    destination_port_ranges    = ["5000","31283"]
     source_address_prefix    =   "*"
     destination_address_prefix = "*"
     description                = "udp 5000, 31283 in"
