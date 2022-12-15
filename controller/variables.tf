@@ -43,3 +43,8 @@ variable "aad-sp-id" {
   type = string
   default = "6fb7d5be-486e-4aea-b5d9-1d7f3a4cb28f"
 }
+variable "copilot_name" {
+    description = "name of Aviatrix CoPilot"
+    default = "CoPilot"
+  
+}
