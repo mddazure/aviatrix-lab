@@ -52,11 +52,11 @@ variable "vmsize" {
 }
 variable "controller-ip" {
   description   = "public ip of controller"
-  default       = "52.174.104.106"
+  default       = "104.40.231.68"
 }
 variable "copilot-ip" {
   description   = "public ip of copilot"
-  default       = "52.174.104.99"
+  default       = "23.97.227.65"
 }
 variable "controller_admin_username" {
   type        = string
