@@ -7,6 +7,9 @@ resource "azurerm_virtual_network" "controller-vnet" {
   location            = var.location-controller
   resource_group_name = var.controller-rg-name
   address_space       = ["10.100.0.0/16"]
+  depends_on = [
+    azurerm_resource_group.aviatrix-controller-rg
+  ]
 
   tags = {
     environment = "controller"
@@ -38,6 +41,10 @@ resource "azurerm_public_ip" "aviatrix_controller_public_ip" {
   location            = var.location-controller
   name                = "${var.controller_name}-public-ip"
   resource_group_name = var.controller-rg-name
+  depends_on = [
+    azurerm_resource_group.aviatrix-controller-rg
+  ]
+ 
 }
 #######################################################################
 ## Create Controller NSG
@@ -46,6 +53,9 @@ resource "azurerm_network_security_group" "aviatrix_controller_nsg" {
   location            = var.location-controller
   name                = "${var.controller_name}-security-group"
   resource_group_name = var.controller-rg-name
+  depends_on = [
+    azurerm_resource_group.aviatrix-controller-rg
+  ]
   security_rule {
     access                     = "Allow"
     direction                  = "Inbound"
@@ -66,6 +76,9 @@ resource "azurerm_network_interface" "aviatrix_controller_nic" {
   location            = var.location-controller
   name                = "${var.controller_name}-network-interface-card"
   resource_group_name = var.controller-rg-name
+  depends_on = [
+    azurerm_resource_group.aviatrix-controller-rg
+  ]
   ip_configuration {
     name                          = "${var.controller_name}-nic"
     private_ip_address_allocation = "Dynamic"
@@ -119,6 +132,9 @@ resource "azurerm_public_ip" "aviatrix_copilot_public_ip" {
   location            = var.location-controller
   name                = "${var.copilot_name}-public-ip"
   resource_group_name = var.controller-rg-name
+  depends_on = [
+    azurerm_resource_group.aviatrix-controller-rg
+  ]
 }
 #######################################################################
 ## Create CoPilot NSG
@@ -127,6 +143,9 @@ resource "azurerm_network_security_group" "aviatrix_copilot_nsg" {
   location            = var.location-controller
   name                = "${var.copilot_name}-security-group"
   resource_group_name = var.controller-rg-name
+  depends_on = [
+    azurerm_resource_group.aviatrix-controller-rg
+  ]
   security_rule {
     access                     = "Allow"
     direction                  = "Inbound"
@@ -159,6 +178,9 @@ resource "azurerm_network_interface" "aviatrix_copilot_nic" {
   location            = var.location-controller
   name                = "${var.copilot_name}-network-interface-card"
   resource_group_name = var.controller-rg-name
+  depends_on = [
+    azurerm_resource_group.aviatrix-controller-rg
+  ]
   ip_configuration {
     name                          = "${var.copilot_name}-nic"
     private_ip_address_allocation = "Dynamic"
