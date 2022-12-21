@@ -22,19 +22,19 @@ variable "location-spoke-2" {
   description = "Location to deploy spoke-2"
   type        = string
   //default     = "swedencentral"
-default = "westeurope"
+default = "West Europe"
 }
 variable "location-spoke-3" {
   description = "Location to deploy spoke-3"
   type        = string
   //default     = "swedencentral"
-default = "westeurope"
+default = "West Europe"
 }
 variable "location-spoke-4" {
   description = "Location to deploy spoke-4"
   type        = string
   //default     = "swedencentral"
-default = "westeurope"
+default = "West Europe"
 }
 variable "username" {
   description = "Username for Virtual Machines"
