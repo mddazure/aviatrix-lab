@@ -1,11 +1,10 @@
-
 #######################################################################
 ## Create Virtual Network - Hub 1
 #######################################################################
 resource "azurerm_virtual_network" "hub-1-vnet" {
   name                = "hub-1-vnet"
   location            = var.location-hub
-  resource_group_name = var.hub-rg-name
+  resource_group_name  = azurerm_resource_group.aviatrix-hub-rg.name
   address_space       = ["10.0.0.0/16"]
 
   tags = {
@@ -20,19 +19,19 @@ resource "azurerm_virtual_network" "hub-1-vnet" {
 #######################################################################
 resource "azurerm_subnet" "hub-1-aviatrix-gateway-subnet" {
   name                 = "aviatrixGWSubnet"
-  resource_group_name  = var.hub-rg-name
+  resource_group_name  = azurerm_resource_group.aviatrix-hub-rg.name
   virtual_network_name = azurerm_virtual_network.hub-1-vnet.name
   address_prefixes       = ["10.0.0.0/24"]
 }
 resource "azurerm_subnet" "hub-1-vm-subnet" {
   name                 = "vmSubnet"
-  resource_group_name  = var.hub-rg-name
+  resource_group_name  = azurerm_resource_group.aviatrix-hub-rg.name
   virtual_network_name = azurerm_virtual_network.hub-1-vnet.name
   address_prefixes       = ["10.0.1.0/24"]
 }
 resource "azurerm_subnet" "bastion-hub-1-subnet" {
   name                 = "AzureBastionSubnet"
-  resource_group_name  = var.hub-rg-name
+  resource_group_name  = azurerm_resource_group.aviatrix-hub-rg.name
   virtual_network_name = azurerm_virtual_network.hub-1-vnet.name
   address_prefixes       = ["10.0.2.0/24"]
 }
@@ -57,19 +56,19 @@ resource "azurerm_virtual_network" "spoke-1-vnet" {
 #######################################################################
 resource "azurerm_subnet" "spoke-1-aviatrix-subnet" {
   name                 = "aviatrixSubnet"
-  resource_group_name  = var.spoke-rg-name
+  resource_group_name  = azurerm_resource_group.aviatrix-spoke-rg.name
   virtual_network_name = azurerm_virtual_network.spoke-1-vnet.name
   address_prefixes       = ["10.1.0.0/24"]
 }
 resource "azurerm_subnet" "spoke-1-vm-subnet" {
   name                 = "vmSubnet"
-  resource_group_name  = var.spoke-rg-name
+  resource_group_name  = azurerm_resource_group.aviatrix-spoke-rg.name
   virtual_network_name = azurerm_virtual_network.spoke-1-vnet.name
   address_prefixes       = ["10.1.1.0/24"]
 }
 resource "azurerm_subnet" "bastion-spoke-1-subnet" {
   name                 = "AzureBastionSubnet"
-  resource_group_name  = var.spoke-rg-name
+  resource_group_name  = azurerm_resource_group.aviatrix-spoke-rg.name
   virtual_network_name = azurerm_virtual_network.spoke-1-vnet.name
   address_prefixes       = ["10.1.2.0/24"]
 }
@@ -94,19 +93,19 @@ resource "azurerm_virtual_network" "spoke-2-vnet" {
 #######################################################################
 resource "azurerm_subnet" "spoke-2-aviatrix-subnet" {
   name                 = "aviatrixSubnet"
-  resource_group_name  = var.spoke-rg-name
+  resource_group_name  = azurerm_resource_group.aviatrix-spoke-rg.name
   virtual_network_name = azurerm_virtual_network.spoke-2-vnet.name
   address_prefixes       = ["10.2.0.0/24"]
 }
 resource "azurerm_subnet" "spoke-2-vm-subnet" {
   name                 = "vmSubnet"
-  resource_group_name  = var.spoke-rg-name
+  resource_group_name  = azurerm_resource_group.aviatrix-spoke-rg.name
   virtual_network_name = azurerm_virtual_network.spoke-2-vnet.name
   address_prefixes       = ["10.2.1.0/24"]
 }
 resource "azurerm_subnet" "bastion-spoke-2-subnet" {
   name                 = "AzureBastionSubnet"
-  resource_group_name  = var.spoke-rg-name
+  resource_group_name  = azurerm_resource_group.aviatrix-spoke-rg.name
   virtual_network_name = azurerm_virtual_network.spoke-2-vnet.name
   address_prefixes       = ["10.2.2.0/24"]
 }
@@ -131,19 +130,19 @@ resource "azurerm_virtual_network" "spoke-3-vnet" {
 #######################################################################
 resource "azurerm_subnet" "spoke-3-aviatrix-subnet" {
   name                 = "aviatrixSubnet"
-  resource_group_name  = var.spoke-rg-name
+  resource_group_name  = azurerm_resource_group.aviatrix-spoke-rg.name
   virtual_network_name = azurerm_virtual_network.spoke-3-vnet.name
   address_prefixes       = ["10.3.0.0/24"]
 }
 resource "azurerm_subnet" "spoke-3-vm-subnet" {
   name                 = "vmSubnet"
-  resource_group_name  = var.spoke-rg-name
+  resource_group_name  = azurerm_resource_group.aviatrix-spoke-rg.name
   virtual_network_name = azurerm_virtual_network.spoke-3-vnet.name
   address_prefixes       = ["10.3.1.0/24"]
 }
 resource "azurerm_subnet" "bastion-spoke-3-subnet" {
   name                 = "AzureBastionSubnet"
-  resource_group_name  = var.spoke-rg-name
+  resource_group_name  = azurerm_resource_group.aviatrix-spoke-rg.name
   virtual_network_name = azurerm_virtual_network.spoke-3-vnet.name
   address_prefixes       = ["10.3.2.0/24"]
 }
@@ -168,19 +167,19 @@ resource "azurerm_virtual_network" "spoke-4-vnet" {
 #######################################################################
 resource "azurerm_subnet" "spoke-4-aviatrix-subnet" {
   name                 = "aviatrixSubnet"
-  resource_group_name  = var.spoke-rg-name
+  resource_group_name  = azurerm_resource_group.aviatrix-spoke-rg.name
   virtual_network_name = azurerm_virtual_network.spoke-4-vnet.name
   address_prefixes       = ["10.4.0.0/24"]
 }
 resource "azurerm_subnet" "spoke-4-vm-subnet" {
   name                 = "vmSubnet"
-  resource_group_name  = var.spoke-rg-name
+  resource_group_name  = azurerm_resource_group.aviatrix-spoke-rg.name
   virtual_network_name = azurerm_virtual_network.spoke-4-vnet.name
   address_prefixes       = ["10.4.1.0/24"]
 }
 resource "azurerm_subnet" "bastion-spoke-4-subnet" {
   name                 = "AzureBastionSubnet"
-  resource_group_name  = var.spoke-rg-name
+  resource_group_name  = azurerm_resource_group.aviatrix-spoke-rg.name
   virtual_network_name = azurerm_virtual_network.spoke-4-vnet.name
   address_prefixes       = ["10.4.2.0/24"]
 }
@@ -191,7 +190,7 @@ resource "azurerm_subnet" "bastion-spoke-4-subnet" {
 resource "azurerm_network_interface" "hub-1-nic" {
   name                 = "hub-1-nic"
   location             = var.location-hub
-  resource_group_name  = var.hub-rg-name
+  resource_group_name  = azurerm_resource_group.aviatrix-hub-rg.name
   enable_ip_forwarding = false
 
   ip_configuration {
@@ -212,7 +211,7 @@ resource "azurerm_network_interface" "hub-1-nic" {
 resource "azurerm_network_interface" "spoke-1-nic" {
   name                 = "spoke-1-nic"
   location             = var.location-spoke-1
-  resource_group_name  = var.spoke-rg-name
+  resource_group_name  = azurerm_resource_group.aviatrix-spoke-rg.name
   enable_ip_forwarding = false
 
   ip_configuration {
@@ -233,7 +232,7 @@ resource "azurerm_network_interface" "spoke-1-nic" {
 resource "azurerm_network_interface" "spoke-2-nic" {
   name                 = "spoke-12-nic"
   location             = var.location-spoke-2
-  resource_group_name  = var.spoke-rg-name
+  resource_group_name  = azurerm_resource_group.aviatrix-spoke-rg.name
   enable_ip_forwarding = false
 
   ip_configuration {
@@ -254,7 +253,7 @@ resource "azurerm_network_interface" "spoke-2-nic" {
 resource "azurerm_network_interface" "spoke-3-nic" {
   name                 = "spoke-3-nic"
   location             = var.location-spoke-3
-  resource_group_name  = var.spoke-rg-name
+  resource_group_name  = azurerm_resource_group.aviatrix-spoke-rg.name
   enable_ip_forwarding = false
 
   ip_configuration {
@@ -275,7 +274,7 @@ resource "azurerm_network_interface" "spoke-3-nic" {
 resource "azurerm_network_interface" "spoke-4-nic" {
   name                 = "spoke-4-nic"
   location             = var.location-spoke-4
-  resource_group_name  = var.spoke-rg-name
+  resource_group_name  = azurerm_resource_group.aviatrix-spoke-rg.name
   enable_ip_forwarding = false
 
   ip_configuration {

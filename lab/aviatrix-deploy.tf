@@ -11,6 +11,7 @@ provider "aviatrix" {
   username = var.controller_admin_username
   password = var.controller_admin_password  
 }
+
 resource "aviatrix_transit_gateway" "transit_gw" {
   cloud_type        = 8
   account_name      = "MdD_1_non_prod"
