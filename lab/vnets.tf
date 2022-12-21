@@ -41,7 +41,7 @@ resource "azurerm_subnet" "bastion-hub-1-subnet" {
 resource "azurerm_virtual_network" "spoke-1-vnet" {
   name                = "spoke-1-vnet"
   location            = var.location-spoke-1
-  resource_group_name = var.spoke-rg-name
+  resource_group_name = azurerm_resource_group.aviatrix-spoke-rg.name
   address_space       = ["10.1.0.0/16"]
 
   tags = {
@@ -78,7 +78,7 @@ resource "azurerm_subnet" "bastion-spoke-1-subnet" {
 resource "azurerm_virtual_network" "spoke-2-vnet" {
   name                = "spoke-2-vnet"
   location            = var.location-spoke-2
-  resource_group_name = var.spoke-rg-name
+  resource_group_name = azurerm_resource_group.aviatrix-spoke-rg.name
   address_space       = ["10.2.0.0/16"]
 
   tags = {
@@ -115,7 +115,7 @@ resource "azurerm_subnet" "bastion-spoke-2-subnet" {
 resource "azurerm_virtual_network" "spoke-3-vnet" {
   name                = "spoke-3-vnet"
   location            = var.location-spoke-3
-  resource_group_name = var.spoke-rg-name
+  resource_group_name = azurerm_resource_group.aviatrix-spoke-rg.name
   address_space       = ["10.3.0.0/16"]
 
   tags = {
@@ -152,7 +152,7 @@ resource "azurerm_subnet" "bastion-spoke-3-subnet" {
 resource "azurerm_virtual_network" "spoke-4-vnet" {
   name                = "spoke-4-vnet"
   location            = var.location-spoke-4
-  resource_group_name = var.spoke-rg-name
+  resource_group_name = azurerm_resource_group.aviatrix-spoke-rg.name
   address_space       = ["10.4.0.0/16"]
 
   tags = {
@@ -295,7 +295,7 @@ resource "azurerm_network_interface" "spoke-4-nic" {
 resource "azurerm_windows_virtual_machine" "hub-1-vm" {
   name                  = "hub-1-vm"
   location              = var.location-hub
-  resource_group_name   = var.hub-rg-name
+  resource_group_name   = azurerm_resource_group.aviatrix-hub-rg.name
   network_interface_ids = [azurerm_network_interface.hub-1-nic.id]
   size               = var.vmsize
   computer_name  = "hub-1-vm"
@@ -342,7 +342,7 @@ SETTINGS
 resource "azurerm_windows_virtual_machine" "spoke-1-vm" {
   name                  = "spoke-1-vm"
   location              = var.location-spoke-1
-  resource_group_name   = var.spoke-rg-name
+  resource_group_name   = azurerm_resource_group.aviatrix-spoke-rg.name
   network_interface_ids = [azurerm_network_interface.spoke-1-nic.id]
   size               = var.vmsize
   computer_name  = "spoke-1-vm"
@@ -389,7 +389,7 @@ SETTINGS
 resource "azurerm_windows_virtual_machine" "spoke-2-vm" {
   name                  = "spoke-2-vm"
   location              = var.location-spoke-2
-  resource_group_name   = var.spoke-rg-name
+  resource_group_name   = azurerm_resource_group.aviatrix-spoke-rg.name
   network_interface_ids = [azurerm_network_interface.spoke-2-nic.id]
   size               = var.vmsize
   computer_name  = "spoke-2-vm"
@@ -436,7 +436,7 @@ SETTINGS
 resource "azurerm_windows_virtual_machine" "spoke-3-vm" {
   name                  = "spoke-3-vm"
   location              = var.location-spoke-3
-  resource_group_name   = var.spoke-rg-name
+  resource_group_name   = azurerm_resource_group.aviatrix-spoke-rg.name
   network_interface_ids = [azurerm_network_interface.spoke-3-nic.id]
   size               = var.vmsize
   computer_name  = "spoke-3-vm"
@@ -483,7 +483,7 @@ SETTINGS
 resource "azurerm_windows_virtual_machine" "spoke-4-vm" {
   name                  = "spoke-4-vm"
   location              = var.location-spoke-4
-  resource_group_name   = var.spoke-rg-name
+  resource_group_name   = azurerm_resource_group.aviatrix-spoke-rg.name
   network_interface_ids = [azurerm_network_interface.spoke-4-nic.id]
   size               = var.vmsize
   computer_name  = "spoke-4-vm"
