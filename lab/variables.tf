@@ -56,7 +56,7 @@ variable "controller-ip" {
 }
 variable "copilot-ip" {
   description   = "public ip of copilot"
-  default       = "23.97.227.65"
+  default       = "20.107.36.88"
 }
 variable "controller_admin_username" {
   type        = string
