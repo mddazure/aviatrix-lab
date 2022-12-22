@@ -64,3 +64,19 @@ resource "aviatrix_spoke_gateway" "spoke_4_gw" {
   gw_name           = "spoke-gw-4"
   allocate_new_eip  = true
 }
+resource "aviatrix_spoke_transit_attachment" "spoke1-transit" {
+  spoke_gw_name = aviatrix_spoke_gateway.spoke_1_gw.gw_name
+  transit_gw_name = aviatrix_transit_gateway.transit_gw.gw_name 
+}
+resource "aviatrix_spoke_transit_attachment" "spoke2-transit" {
+  spoke_gw_name = aviatrix_spoke_gateway.spoke_2_gw.gw_name
+  transit_gw_name = aviatrix_transit_gateway.transit_gw.gw_name 
+}
+resource "aviatrix_spoke_transit_attachment" "spoke3-transit" {
+  spoke_gw_name = aviatrix_spoke_gateway.spoke_3_gw.gw_name
+  transit_gw_name = aviatrix_transit_gateway.transit_gw.gw_name 
+}
+resource "aviatrix_spoke_transit_attachment" "spoke4-transit" {
+  spoke_gw_name = aviatrix_spoke_gateway.spoke_4_gw.gw_name
+  transit_gw_name = aviatrix_transit_gateway.transit_gw.gw_name 
+}
