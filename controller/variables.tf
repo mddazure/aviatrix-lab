@@ -57,3 +57,8 @@ variable "copilot_name" {
     default = "CoPilot"
   
 }
+variable "account-name"{
+  description = "name of azure access account configured on controller"
+  // default = "MdD_1_non_prod" //fdpo
+  default = "Saros-Security " //sarosio
+}

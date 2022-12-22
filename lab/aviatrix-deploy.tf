@@ -14,7 +14,7 @@ provider "aviatrix" {
 
 resource "aviatrix_transit_gateway" "transit_gw" {
   cloud_type        = 8
-  account_name      = "MdD_1_non_prod"
+  account_name      = var.account-name
   vpc_reg           = var.location-hub
   vpc_id            = "${azurerm_virtual_network.hub-1-vnet.name}:${azurerm_resource_group.aviatrix-hub-rg.name}"
   subnet            = azurerm_subnet.hub-1-aviatrix-gateway-subnet.address_prefixes[0]
@@ -26,7 +26,7 @@ resource "aviatrix_transit_gateway" "transit_gw" {
 
 resource "aviatrix_spoke_gateway" "spoke_1_gw" {
   cloud_type        = 8
-  account_name      = "MdD_1_non_prod"
+  account_name      = var.account-name
   vpc_reg           = var.location-spoke-1
   vpc_id            = "${azurerm_virtual_network.spoke-1-vnet.name}:${azurerm_resource_group.aviatrix-spoke-rg.name}"
   subnet            = azurerm_subnet.spoke-1-aviatrix-subnet.address_prefixes[0]
@@ -36,7 +36,7 @@ resource "aviatrix_spoke_gateway" "spoke_1_gw" {
 }
 resource "aviatrix_spoke_gateway" "spoke_2_gw" {
   cloud_type        = 8
-  account_name      = "MdD_1_non_prod"
+  account_name      = var.account-name
   vpc_reg           = var.location-spoke-2
   vpc_id            = "${azurerm_virtual_network.spoke-2-vnet.name}:${azurerm_resource_group.aviatrix-spoke-rg.name}"
   subnet            = azurerm_subnet.spoke-2-aviatrix-subnet.address_prefixes[0]
@@ -46,7 +46,7 @@ resource "aviatrix_spoke_gateway" "spoke_2_gw" {
 }
 resource "aviatrix_spoke_gateway" "spoke_3_gw" {
   cloud_type        = 8
-  account_name      = "MdD_1_non_prod"
+  account_name      = var.account-name
   vpc_reg           = var.location-spoke-3
   vpc_id            = "${azurerm_virtual_network.spoke-3-vnet.name}:${azurerm_resource_group.aviatrix-spoke-rg.name}"
   subnet            = azurerm_subnet.spoke-3-aviatrix-subnet.address_prefixes[0]
@@ -56,7 +56,7 @@ resource "aviatrix_spoke_gateway" "spoke_3_gw" {
 }
 resource "aviatrix_spoke_gateway" "spoke_4_gw" {
   cloud_type        = 8
-  account_name      = "MdD_1_non_prod"
+  account_name      = var.account-name
   vpc_reg           = var.location-spoke-4
   vpc_id            = "${azurerm_virtual_network.spoke-4-vnet.name}:${azurerm_resource_group.aviatrix-spoke-rg.name}"
   subnet            = azurerm_subnet.spoke-4-aviatrix-subnet.address_prefixes[0]
