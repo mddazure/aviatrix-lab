@@ -212,7 +212,7 @@ resource "azurerm_linux_virtual_machine" "aviatrix_copilot_vm" {
   }
 }
 resource "azurerm_managed_disk" "default" {
-  count                = 1
+  //count                = 1
   name                 = "default_data_disk"
   location             = var.location-controller
   resource_group_name  = azurerm_resource_group.aviatrix-controller-rg.name
@@ -221,7 +221,7 @@ resource "azurerm_managed_disk" "default" {
   disk_size_gb         = 30
 }
 resource "azurerm_virtual_machine_data_disk_attachment" "default" {
-  count              = 1
+  //count              = 1
   managed_disk_id    = azurerm_managed_disk.default.id
   virtual_machine_id = azurerm_linux_virtual_machine.aviatrix_copilot_vm.id
   lun                = "0"
