@@ -36,16 +36,20 @@ variable "incoming_ssl_cidr" {
 }
 variable "aad-sp-secret" {
   type = string
-  default = "28V8Q~ti8VdGTf6dkgY.KZHZoOz.q4YRzU6TLdnY"
-  description = "34e62f82-9e09-4ff6-a809-1c9d1e4f4669"
+  // default = "28V8Q~ti8VdGTf6dkgY.KZHZoOz.q4YRzU6TLdnY" // fdpo
+  default = "ghX8Q~DACYuTGz.WCsBeSX2Z~nlkNYBywhd6uajm" //sarosio
+  // description = "34e62f82-9e09-4ff6-a809-1c9d1e4f4669" //fdpo
+  description = "0bbaeb0f-8f6c-4ddc-b39b-4ca17d73d68e" //sarosio
 }
 variable "aad-sp-id" {
   type = string
-  default = "6fb7d5be-486e-4aea-b5d9-1d7f3a4cb28f"
+  // default = "6fb7d5be-486e-4aea-b5d9-1d7f3a4cb28f" //fdpo
+  default = "a898aff6-e975-4593-ac9a-81415fb501bf" //sarosio
 }
 variable "directory-id" {
   type = string
-  default = "16b3c013-d300-468d-ac64-7eda0820b6d3"
+  // default = "16b3c013-d300-468d-ac64-7eda0820b6d3" //fdpo
+  default = "8da77292-860d-47ba-afd9-bfe774c86c4d" //sarosio
 }
 
 variable "copilot_name" {
