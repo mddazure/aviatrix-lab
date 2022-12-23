@@ -1,17 +1,3 @@
-terraform {
-    required_providers {
-    aviatrix = {
-      source = "AviatrixSystems/aviatrix"
-      version = "3.0.0"
-    }
-  }
-}
-provider "aviatrix" {
-  controller_ip = var.controller-ip
-  username = var.controller_admin_username
-  password = var.controller_admin_password  
-}
-
 resource "aviatrix_transit_gateway" "transit_gw_2" {
   cloud_type        = 8
   account_name      = var.account-name
