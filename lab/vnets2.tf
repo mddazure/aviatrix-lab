@@ -177,7 +177,7 @@ resource "azurerm_subnet" "spoke-24-vm-subnet" {
   virtual_network_name = azurerm_virtual_network.spoke-24-vnet.name
   address_prefixes       = ["10.24.1.0/24"]
 }
-resource "azurerm_subnet" "bastion-spoke-4-subnet" {
+resource "azurerm_subnet" "bastion-spoke-24-subnet" {
   name                 = "AzureBastionSubnet"
   resource_group_name  = azurerm_resource_group.aviatrix-spoke-rg.name
   virtual_network_name = azurerm_virtual_network.spoke-24-vnet.name
@@ -229,7 +229,7 @@ resource "azurerm_network_interface" "spoke-21-nic" {
 #######################################################################
 ## Create Network Interface - Spoke 22
 #######################################################################
-resource "azurerm_network_interface" "spoke-2-nic" {
+resource "azurerm_network_interface" "spoke-22-nic" {
   name                 = "spoke-22-nic"
   location             = var.location-spoke-2
   resource_group_name  = azurerm_resource_group.aviatrix-spoke-rg.name
@@ -237,7 +237,7 @@ resource "azurerm_network_interface" "spoke-2-nic" {
 
   ip_configuration {
     name                          = "spoke-22-ipconfig"
-    subnet_id                     = azurerm_subnet.spoke-2-vm-subnet.id
+    subnet_id                     = azurerm_subnet.spoke-22-vm-subnet.id
     private_ip_address_allocation = "Dynamic"
   }
 
@@ -386,7 +386,7 @@ SETTINGS
 #######################################################################
 ## Create Virtual Machine spoke-22
 #######################################################################
-resource "azurerm_windows_virtual_machine" "spoke-2-vm" {
+resource "azurerm_windows_virtual_machine" "spoke-22-vm" {
   name                  = "spoke-22-vm"
   location              = var.location-spoke-2
   resource_group_name   = azurerm_resource_group.aviatrix-spoke-rg.name
