@@ -23,32 +23,32 @@ resource "azurerm_bastion_host" "bastion-spoke-1" {
     public_ip_address_id = azurerm_public_ip.bastion-spoke-1-pubip.id
   }
 }
-/*
 #######################################################################
-## Create Bastion spoke-2
+## Create Bastion spoke-24
 #######################################################################
-resource "azurerm_public_ip" "bastion-spoke-2-pubip" {
-  name                = "bastion-spoke-2-pubip"
-  location            = var.location-spoke-2
+resource "azurerm_public_ip" "bastion-spoke-24-pubip" {
+  name                = "bastion-spoke-24-pubip"
+  location            = var.location-spoke-24
   resource_group_name = var.spoke-rg-name
   allocation_method   = "Static"
   sku                 = "Standard"
 }
 
-resource "azurerm_bastion_host" "bastion-spoke-2" {
-  name                = "bastion-spoke-2"
-  location            = var.location-spoke-2
+resource "azurerm_bastion_host" "bastion-spoke-24" {
+  name                = "bastion-spoke-24"
+  location            = var.location-spoke-4
   resource_group_name = var.spoke-rg-name
   sku                 = "Standard"
   ip_connect_enabled =  true
   shareable_link_enabled = true
 
   ip_configuration {
-    name                 = "bastion-spoke-2-configuration"
-    subnet_id            = azurerm_subnet.bastion-spoke-2-subnet.id
-    public_ip_address_id = azurerm_public_ip.bastion-spoke-2-pubip.id
+    name                 = "bastion-spoke-24-configuration"
+    subnet_id            = azurerm_subnet.bastion-spoke-24-subnet.id
+    public_ip_address_id = azurerm_public_ip.bastion-spoke-24-pubip.id
   }
 }
+/*
 #######################################################################
 ## Create Bastion spoke-3
 #######################################################################

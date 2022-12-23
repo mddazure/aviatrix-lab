@@ -1,3 +1,8 @@
+variable "incoming_ssl_cidr" {
+  type        = list(string)
+  default = [ "217.121.0.0/16" ]
+  description = "Incoming cidr for security group used by controller"
+}
 variable "controller-rg-name" {
   type = string
   default = "aviatrix-controller-rg"
