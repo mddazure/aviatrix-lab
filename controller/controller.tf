@@ -227,3 +227,11 @@ resource "azurerm_virtual_machine_data_disk_attachment" "default" {
   lun                = "0"
   caching            = "ReadWrite"
 }
+output "controller-ip" {
+  description = "public ip of controller"
+  value = azurerm_public_ip.aviatrix_controller_public_ip.ip_address  
+}
+output "copilot-ip" {
+  description = "public ip of copilot"
+  value = azurerm_public_ip.aviatrix_copilot_public_ip.ip_address  
+}
