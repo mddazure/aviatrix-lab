@@ -22,6 +22,8 @@ resource "aviatrix_transit_gateway" "transit_gw" {
   gw_name           = "transit-gw-hub-1"
   allocate_new_eip  = true
   enable_bgp_over_lan = true
+  connected_transit   = true
+  enable_advertise_transit_cidr = true
 }
 
 resource "aviatrix_spoke_gateway" "spoke_1_gw" {
