@@ -25,7 +25,7 @@ resource "aviatrix_spoke_gateway" "spoke_21_gw" {
 resource "aviatrix_spoke_gateway" "spoke_22_gw" {
   cloud_type        = 8
   account_name      = var.account-name
-  vpc_reg           = var.location-spoke-22
+  vpc_reg           = var.location-spoke-2
   vpc_id            = "${azurerm_virtual_network.spoke-22-vnet.name}:${azurerm_resource_group.aviatrix-spoke-rg.name}"
   subnet            = azurerm_subnet.spoke-22-aviatrix-subnet.address_prefixes[0]
   gw_size           = "Standard_B1ms"
@@ -35,7 +35,7 @@ resource "aviatrix_spoke_gateway" "spoke_22_gw" {
 resource "aviatrix_spoke_gateway" "spoke_23_gw" {
   cloud_type        = 8
   account_name      = var.account-name
-  vpc_reg           = var.location-spoke-23
+  vpc_reg           = var.location-spoke-3
   vpc_id            = "${azurerm_virtual_network.spoke-23-vnet.name}:${azurerm_resource_group.aviatrix-spoke-rg.name}"
   subnet            = azurerm_subnet.spoke-23-aviatrix-subnet.address_prefixes[0]
   gw_size           = "Standard_B1ms"
@@ -45,7 +45,7 @@ resource "aviatrix_spoke_gateway" "spoke_23_gw" {
 resource "aviatrix_spoke_gateway" "spoke_24_gw" {
   cloud_type        = 8
   account_name      = var.account-name
-  vpc_reg           = var.location-spoke-24
+  vpc_reg           = var.location-spoke-4
   vpc_id            = "${azurerm_virtual_network.spoke-24-vnet.name}:${azurerm_resource_group.aviatrix-spoke-rg.name}"
   subnet            = azurerm_subnet.spoke-24-aviatrix-subnet.address_prefixes[0]
   gw_size           = "Standard_B1ms"
