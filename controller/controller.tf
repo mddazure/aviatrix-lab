@@ -231,6 +231,10 @@ output "controller-ip" {
   description = "public ip of controller"
   value = azurerm_public_ip.aviatrix_controller_public_ip.ip_address  
 }
+output "controller-private-ip" {
+  description = "private ip of controller"
+  value = azurerm_network_interface.aviatrix_controller_nic.private_ip_address
+}
 output "copilot-ip" {
   description = "public ip of copilot"
   value = azurerm_public_ip.aviatrix_copilot_public_ip.ip_address  
