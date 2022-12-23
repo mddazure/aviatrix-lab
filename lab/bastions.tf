@@ -136,7 +136,7 @@ resource "azurerm_public_ip" "bastion-hub-2-pubip" {
 }
 
 resource "azurerm_bastion_host" "bastion-hub-2" {
-  name                = "bastion-hub-1"
+  name                = "bastion-hub-2"
   location            = var.location-hub
   resource_group_name = azurerm_resource_group.aviatrix-hub-rg.name
   sku                 = "Standard"
@@ -145,7 +145,7 @@ resource "azurerm_bastion_host" "bastion-hub-2" {
 
   ip_configuration {
     name                 = "bastion-hub-2-configuration"
-    subnet_id            = azurerm_subnet.bastion-hub-1-subnet.id
-    public_ip_address_id = azurerm_public_ip.bastion-hub-1-pubip.id
+    subnet_id            = azurerm_subnet.bastion-hub-2-subnet.id
+    public_ip_address_id = azurerm_public_ip.bastion-hub-2-pubip.id
   }
 }
