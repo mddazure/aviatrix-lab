@@ -39,9 +39,11 @@ Apply:
 `Terraform apply`
 After deployment, copy the Controller public and private ip addresses and the Copilot public ip address from the Terraform output.
 
-Access the Controller from a browser on https://controller-public-ip.
+Access the Controller from a browser on https://[controller-public-ip].
+
 Username: admin
-Password: controller private ip address.
+
+Password: [controller private ip address]
 
 Follow instructions in [Azure Account Credential Setup](https://read.docs.aviatrix.com/HowTos/Aviatrix_Account_Azure.html) to create a Service Principal and configure the Controller.
 
