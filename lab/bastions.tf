@@ -28,7 +28,7 @@ resource "azurerm_bastion_host" "bastion-spoke-1" {
 #######################################################################
 resource "azurerm_public_ip" "bastion-spoke-24-pubip" {
   name                = "bastion-spoke-24-pubip"
-  location            = var.location-spoke-24
+  location            = var.location-spoke-4
   resource_group_name = var.spoke-rg-name
   allocation_method   = "Static"
   sku                 = "Standard"
