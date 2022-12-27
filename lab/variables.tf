@@ -20,32 +20,62 @@ variable "spoke-rg-name" {
 variable "location-hub" {
   description = "Location to deploy hub"
   type        = string
-  //default     = "swedencentral"
-default = "West Europe"
+  default     = "Sweden Central"
+  //default = "West Europe"
 }
 variable "location-spoke-1" {
   description = "Location to deploy spoke-1"
   type        = string
-  //default     = "swedencentral"
-default = "West Europe"
+  default     = "Sweden Central"
+  //default = "West Europe"
 }
 variable "location-spoke-2" {
   description = "Location to deploy spoke-2"
   type        = string
-  //default     = "swedencentral"
-default = "West Europe"
+  default     = "Sweden Central"
+  //default = "West Europe"
 }
 variable "location-spoke-3" {
   description = "Location to deploy spoke-3"
   type        = string
-  //default     = "swedencentral"
-default = "West Europe"
+  //default     = "Sweden Central"
+  default = "West Europe"
 }
 variable "location-spoke-4" {
   description = "Location to deploy spoke-4"
   type        = string
-  //default     = "swedencentral"
-default = "West Europe"
+  //default     = "Sweden Central"
+  default = "West Europe"
+}
+variable "location-hub-2" {
+  description = "Location to deploy hub"
+  type        = string
+  default     = "US East 2"
+  //default = "West Europe"
+}
+variable "location-spoke-21" {
+  description = "Location to deploy spoke-1"
+  type        = string
+  default     = "US East 2"
+  //default = "West Europe"
+}
+variable "location-spoke-22" {
+  description = "Location to deploy spoke-2"
+  type        = string
+  default     = "US East 2"
+  //default = "West Europe"
+}
+variable "location-spoke-23" {
+  description = "Location to deploy spoke-3"
+  type        = string
+  //default     = "Sweden Central"
+  default = "West US"
+}
+variable "location-spoke-24" {
+  description = "Location to deploy spoke-4"
+  type        = string
+  //default     = "Sweden Central"
+  default = "West US"
 }
 variable "username" {
   description = "Username for Virtual Machines"

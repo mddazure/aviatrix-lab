@@ -58,7 +58,7 @@ Open variables.tf in the vi editor:
 
 `vi variables.tf`
 
-Change the variables "controller-ip" and "copilot-ip" to the actual vakues displayed in the output of the controller deployment. Save and quit vi with `:wq`.
+Change the variables "controller-ip" and "copilot-ip" to the actual values displayed in the output of the controller deployment. Save and quit vi with `:wq`.
 
 Initialize Terraform:
 `Terraform init`
@@ -74,6 +74,14 @@ The lab deployment does this:
    -  Spokes 1 - 4 to Hub 1.
    -  Spokes 21 - 24 to Hub 2.
    -  Hub 1 and Hub 2.
+
+## Explore
+
+On the Controller, go to Multi-Cloud Transit -> List. The Transit- and Spoke Gateways will be listed, under Transit resp. Spoke at the top of the screen. 
+![image](images/transit-gws.png)
+
+The Spokes will show connected to their respective Transit Gateways.
+![image](images/spoke-gws.png)
 
 
 
