@@ -22,7 +22,8 @@ If necessary select your target subscription:
 Clone the  GitHub repository:
 `git clone https://github.com/mddazure/aviatrix-lab`
 
-First deploy Controller and Copilot. These are placed in a separate isolated VNET.
+### Controller and CoPilot
+First deploy Controller and CoPilot. These are placed in a separate isolated VNET.
 Change directory:
 
  `cd aviatrix-lab/controller`
@@ -37,7 +38,7 @@ Initialize Terraform:
 `Terraform init`
 Apply:
 `Terraform apply`
-After deployment, copy the Controller public and private ip addresses and the Copilot public ip address from the Terraform output.
+After deployment, copy the Controller public and private ip addresses and the CoPilot public ip address from the Terraform output.
 
 Access the Controller from a browser on https://[controller-public-ip].
 
@@ -46,6 +47,35 @@ Username: admin
 Password: [controller private ip address]
 
 Follow instructions in [Azure Account Credential Setup](https://read.docs.aviatrix.com/HowTos/Aviatrix_Account_Azure.html) to create a Service Principal and configure the Controller.
+
+### Lab
+When the Controller is configured, you are ready to deploy the Lab.
+
+Change directory:
+`cd ../lab`
+
+Open variables.tf in the vi editor:
+
+`vi variables.tf`
+
+Change the variables "controller-ip" and "copilot-ip" to the actual vakues displayed in the output of the controller deployment. Save and quit vi with `:wq`.
+
+Initialize Terraform:
+`Terraform init`
+Apply:
+`Terraform apply`
+
+The lab deployment does this:
+-  Create 2 Hub- and 8 Spoke VNETs, each with a Windows Server 2022 VM running a simple web server. This returns the VM machine name when accessed over http at its private ip address (e.g. `curl 10.1.1.4` to Spoke 1 returns "spoke-1-vm").
+-  Configure the Aviatrix Terraform resource provider with the public ip address of the controller.
+-  Create an Aviatrix Transit Gateway in each Hub VNET.
+-  Create an Aviatrix Spoke Gateway is each Spoke VNET.
+-  Connect:
+   -  Spokes 1 - 4 to Hub 1.
+   -  Spokes 21 - 24 to Hub 2.
+   -  Hub 1 and Hub 2.
+
+
 
 
 

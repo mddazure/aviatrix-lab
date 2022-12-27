@@ -1,3 +1,14 @@
+############ change to actual values displayed as output of controller deployment ##########
+variable "controller-ip" {
+  description   = "public ip of controller"
+  default       = "20.16.97.252"
+}
+variable "copilot-ip" {
+  description   = "public ip of copilot"
+  default       = "20.16.98.1"
+}
+############################################################################################
+
 variable "hub-rg-name" {
   type = string
   default = "aviatrix-hub-rg"
