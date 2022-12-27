@@ -52,7 +52,7 @@ resource "azurerm_virtual_network" "spoke-21-vnet" {
   }
 }
 #######################################################################
-## Create Subnets - Spoke 1
+## Create Subnets - Spoke 21
 #######################################################################
 resource "azurerm_subnet" "spoke-21-aviatrix-subnet" {
   name                 = "aviatrixSubnet"
@@ -258,7 +258,7 @@ resource "azurerm_network_interface" "spoke-23-nic" {
 
   ip_configuration {
     name                          = "spoke-23-ipconfig"
-    subnet_id                     = azurerm_subnet.spoke-3-vm-subnet.id
+    subnet_id                     = azurerm_subnet.spoke-23-vm-subnet.id
     private_ip_address_allocation = "Dynamic"
   }
 
