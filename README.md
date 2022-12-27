@@ -77,13 +77,30 @@ The lab deployment does this:
 
 ## Explore
 
-On the Controller, go to Multi-Cloud Transit -> List. The Transit- and Spoke Gateways will be listed, under Transit resp. Spoke at the top of the screen. 
+On the Controller, go to Multi-Cloud Transit -> List. 
+
+The Transit- and Spoke Gateways will be listed, under Transit resp. Spoke at the top of the screen. 
+
 ![image](images/transit-gws.png)
 
 The Spokes will show connected to their respective Transit Gateways.
+
 ![image](images/spoke-gws.png)
 
+Connect to Spoke VM 1 via Bastion. 
 
+Verify connectivity to all other Hub- and Spoke VMs through
+
+`curl [ip-address]` 
+
+This should return the VM name.
+
+## Notes
+
+:point_right: This lab requires an Aviatrix Customer ID.
+
+:point_right: When deploying in a Microsoft AIRS internal subscription, NSGs are automatically attached to all subnets by policy. These NSGs block operation of the Aviatrix solution. Run the `nsg.sh` script from Cloud Shell, to periodically remove any NSGs attched by policy.
+This does not create exposure as Aviatrix attaches appropriate NSG's to all their components at the NIC level, and the test VMs in the lab do not have public IP addresses.
 
 
 
