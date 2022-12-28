@@ -50,19 +50,19 @@ variable "location-spoke-4" {
 variable "location-hub-2" {
   description = "Location to deploy hub"
   type        = string
-  default     = "US East 2"
+  default     = "East US"
   //default = "West Europe"
 }
 variable "location-spoke-21" {
   description = "Location to deploy spoke-1"
   type        = string
-  default     = "US East 2"
+  default     = "East US"
   //default = "West Europe"
 }
 variable "location-spoke-22" {
   description = "Location to deploy spoke-2"
   type        = string
-  default     = "US East 2"
+  default     = "East US"
   //default = "West Europe"
 }
 variable "location-spoke-23" {
