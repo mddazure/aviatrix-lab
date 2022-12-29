@@ -102,6 +102,7 @@ This should return the VM name.
 :point_right: When deploying in a Microsoft AIRS internal subscription, NSGs are automatically attached to all subnets by policy. These NSGs block operation of the Aviatrix solution. Run the `nsg.sh` script from Cloud Shell, to periodically remove any NSGs attched by policy.
 This does not create exposure as Aviatrix attaches appropriate NSG's to all their components at the NIC level, and the test VMs in the lab do not have public IP addresses.
 
+:point_right: To use CoPilot, configure Netflow export to the public IP address of the CoPilot VM on port 31283, as documented in [Netflow Integration](https://read.docs.aviatrix.com/HowTos/netflow.html).
 
 
 
