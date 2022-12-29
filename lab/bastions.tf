@@ -28,7 +28,7 @@ resource "azurerm_bastion_host" "bastion-spoke-1" {
 #######################################################################
 resource "azurerm_public_ip" "bastion-spoke-24-pubip" {
   name                = "bastion-spoke-24-pubip"
-  location            = var.location-spoke-4
+  location            = var.location-spoke-24
   resource_group_name = var.spoke-rg-name
   allocation_method   = "Static"
   sku                 = "Standard"
@@ -36,7 +36,7 @@ resource "azurerm_public_ip" "bastion-spoke-24-pubip" {
 
 resource "azurerm_bastion_host" "bastion-spoke-24" {
   name                = "bastion-spoke-24"
-  location            = var.location-spoke-4
+  location            = var.location-spoke-24
   resource_group_name = var.spoke-rg-name
   sku                 = "Standard"
   ip_connect_enabled =  true
@@ -129,7 +129,7 @@ resource "azurerm_bastion_host" "bastion-hub-1" {
 #######################################################################
 resource "azurerm_public_ip" "bastion-hub-2-pubip" {
   name                = "bastion-hub-2-pubip"
-  location            = var.location-hub
+  location            = var.location-hub-2
   resource_group_name = azurerm_resource_group.aviatrix-hub-rg.name
   allocation_method   = "Static"
   sku                 = "Standard"
@@ -137,7 +137,7 @@ resource "azurerm_public_ip" "bastion-hub-2-pubip" {
 
 resource "azurerm_bastion_host" "bastion-hub-2" {
   name                = "bastion-hub-2"
-  location            = var.location-hub
+  location            = var.location-hub-2
   resource_group_name = azurerm_resource_group.aviatrix-hub-rg.name
   sku                 = "Standard"
   ip_connect_enabled =  true

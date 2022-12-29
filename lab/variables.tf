@@ -11,7 +11,7 @@ variable "copilot-ip" {
 
 variable "hub-rg-name" {
   type = string
-  default = "aviatrix-hub-rg-2"
+  default = "aviatrix-hub-rg"
   }
 variable "spoke-rg-name" {
   type = string
