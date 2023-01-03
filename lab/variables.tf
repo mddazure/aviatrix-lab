@@ -1,11 +1,11 @@
 ############ change to actual values displayed as output of controller deployment ##########
 variable "controller-ip" {
   description   = "public ip of controller"
-  default       = "20.16.97.252"
+  default       = "108.143.8.31"
 }
 variable "copilot-ip" {
   description   = "public ip of copilot"
-  default       = "20.16.98.1"
+  default       = "108.143.8.25"
 }
 ############################################################################################
 
