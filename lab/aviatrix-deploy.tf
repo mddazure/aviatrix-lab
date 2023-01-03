@@ -9,7 +9,7 @@ terraform {
 provider "aviatrix" {
   controller_ip = var.controller-ip
   username = var.controller_admin_username
-  password = var.controller_admin_password  
+  password = var.controller_admin_password
 }
 
 resource "aviatrix_transit_gateway" "transit_gw" {
@@ -24,6 +24,8 @@ resource "aviatrix_transit_gateway" "transit_gw" {
   enable_bgp_over_lan = true
   connected_transit   = true
   enable_advertise_transit_cidr = true
+  
+  
 }
 
 resource "aviatrix_spoke_gateway" "spoke_1_gw" {
