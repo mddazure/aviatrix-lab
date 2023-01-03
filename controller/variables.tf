@@ -35,7 +35,7 @@ variable "controller_virtual_machine_admin_password" {
 variable "controller_virtual_machine_size" {
   type        = string
   description = "Virtual Machine size for the controller."
-  default     = "Standard_A4_v2"
+  default     = "Standard_D2s_v5"
 }
 variable "aad-sp-secret" {
   type = string

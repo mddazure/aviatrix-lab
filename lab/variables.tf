@@ -7,6 +7,12 @@ variable "copilot-ip" {
   description   = "public ip of copilot"
   default       = "108.143.8.25"
 }
+variable "account-name"{
+  description = "name of azure access account configured on controller"
+  // default = "MdD_1_non_prod" //fdpo
+  // default = "Saros-Security" //sarosio
+  default = "External_MdD_1"
+}
 ############################################################################################
 
 variable "hub-rg-name" {
@@ -89,7 +95,8 @@ variable "password" {
 }
 variable "vmsize" {
   description = "Size of the VMs"
-  default     = "Standard_D2s_v3"
+  default     = "Standard_D2s_v5"
+
 }
 variable "controller_admin_username" {
   type        = string
@@ -100,9 +107,4 @@ variable "controller_admin_password" {
   type        = string
   description = "Admin Password for the controller."
   default     = "Nienke0405%"
-}
-variable "account-name"{
-  description = "name of azure access account configured on controller"
-  // default = "MdD_1_non_prod" //fdpo
-  default = "Saros-Security" //sarosio
 }
