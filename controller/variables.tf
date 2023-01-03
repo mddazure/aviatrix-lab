@@ -37,11 +37,6 @@ variable "controller_virtual_machine_size" {
   description = "Virtual Machine size for the controller."
   default     = "Standard_A4_v2"
 }
-variable "incoming_ssl_cidr" {
-  type        = list(string)
-  default = [ "217.121.0.0/16" ]
-  description = "Incoming cidr for security group used by controller"
-}
 variable "aad-sp-secret" {
   type = string
   // default = "28V8Q~ti8VdGTf6dkgY.KZHZoOz.q4YRzU6TLdnY" // fdpo
