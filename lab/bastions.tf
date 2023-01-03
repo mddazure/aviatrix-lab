@@ -23,7 +23,7 @@ resource "azurerm_bastion_host" "bastion-spoke-1" {
     public_ip_address_id = azurerm_public_ip.bastion-spoke-1-pubip.id
   }
 }
-/*
+
 #######################################################################
 ## Create Bastion spoke-24
 #######################################################################
