@@ -24,8 +24,8 @@ resource "aviatrix_transit_gateway" "transit_gw" {
   enable_bgp_over_lan = true
   connected_transit   = true
   enable_advertise_transit_cidr = true
-  
-  
+  bgp_ecmp = true
+  enable_segmentation = true
 }
 
 resource "aviatrix_spoke_gateway" "spoke_1_gw" {
