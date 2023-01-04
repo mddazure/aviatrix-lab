@@ -99,6 +99,7 @@ variable "password" {
    type        = string
    default     = "Aviatrix-2022"
 }
+
 variable "vmsize" {
   description = "Size of the VMs"
   default     = "Standard_D2s_v5"
