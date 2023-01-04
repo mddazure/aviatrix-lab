@@ -13,6 +13,12 @@ variable "account-name"{
   // default = "Saros-Security" //sarosio
   default = "External_MdD_1"
 }
+variable "account-name-int"{
+  description = "name of azure access account configured on controller"
+  default = "MdD_1_non_prod" //fdpo
+  // default = "Saros-Security" //sarosio
+  // default = "External_MdD_1"
+}
 ############################################################################################
 
 variable "hub-rg-name" {
