@@ -1,2 +1,5 @@
 #ignore license file
 license.json
+
+aviatrix-deploy-int.tfx
+aviatrix-deploy2-int.tfx
