@@ -17,7 +17,7 @@ resource "aviatrix_transit_gateway" "transit_gw-int" {
 
 resource "aviatrix_spoke_gateway" "spoke_1_gw-int" {
   cloud_type        = 8
-  account_name      = var.account-name-int-int
+  account_name      = var.account-name-int
   vpc_reg           = var.location-spoke-1
   vpc_id            = "${azurerm_virtual_network.spoke-1-vnet.name}:${azurerm_resource_group.aviatrix-spoke-rg.name}"
   subnet            = azurerm_subnet.spoke-1-aviatrix-subnet.address_prefixes[0]
