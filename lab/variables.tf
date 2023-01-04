@@ -95,7 +95,7 @@ variable "password" {
 }
 variable "vmsize" {
   description = "Size of the VMs"
-  default     = "Standard_B1ms"
+  default     = "Standard_DS2_v2"
 
 }
 variable "controller_admin_username" {
