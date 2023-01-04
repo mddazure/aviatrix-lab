@@ -64,3 +64,9 @@ variable "copilot_name" {
     default = "CoPilot"
   
 }
+variable "subscription_id" {
+  // default = "d44aae72-864b-4efe-a856-28c4336b52d1" //fdpo
+  //description = "MdD_1_non_prod"
+  default = "7749fbb8-4096-4e85-8ad2-ef8182d01f02"
+  description = "External_MdD_1"
+}
