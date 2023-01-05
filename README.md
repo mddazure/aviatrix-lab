@@ -75,9 +75,9 @@ The lab deployment does this:
    -  Spokes 21 - 24 to Hub 2.
    -  Hub 1 and Hub 2.
 -  Segmentation:
-   -  Create Domains Red, Blue and Green
-   -  Attach Spokes to Domains, see topology diagram
-   -  Create Domain Connection Policies permitting any-to-any connectivity
+   -  Create Domains Red, Blue and Green.
+   -  Attach Spokes to Domains, see topology diagram.
+   -  Create Domain Connection Policies permitting any-to-any connectivity.
 
 ## Explore
 
