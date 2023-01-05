@@ -101,6 +101,10 @@ This should return the VM name.
 
 Download and run [loop.bat](https://raw.githubusercontent.com/mddazure/aviatrix-lab/main/lab/loop.bat) on Spoke VM 1 to continuously `curl` the other spokes. This creates flows that can be monitored in CoPilot.
 
+![image](images/loop.bat.png)
+
+![image](images/copilot-flows.png)
+
 ## Notes
 
 :point_right: This lab requires an Aviatrix Customer ID.
