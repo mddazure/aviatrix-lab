@@ -106,6 +106,7 @@ Download and run [loop.bat](https://raw.githubusercontent.com/mddazure/aviatrix-
 ![image](images/copilot-flows.png)
 
 Modify Network Domain Connection Policies under Segmentation on the Controller.
+
 Observe connections from Spoke VM 1 failing and succeeding accordingly.
 
 ## Notes
