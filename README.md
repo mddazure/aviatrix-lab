@@ -75,7 +75,7 @@ The lab deployment does this:
    -  Spokes 21 - 24 to Hub 2.
    -  Hub 1 and Hub 2.
 -  Segmentation:
-   -  Create Domains Red, Blue and Green.
+   -  Create Network Domains Red, Blue and Green.
    -  Attach Spokes to Domains, see topology diagram.
    -  Create Domain Connection Policies permitting any-to-any connectivity.
 
@@ -104,6 +104,8 @@ Download and run [loop.bat](https://raw.githubusercontent.com/mddazure/aviatrix-
 ![image](images/loop.bat.png)
 
 ![image](images/copilot-flows.png)
+
+Modify Network Domain Connection Policies under Segmentation on the Controller, observe connections from Spoke VM 1 failing and succeeding accordingly.
 
 ## Notes
 
