@@ -74,6 +74,10 @@ The lab deployment does this:
    -  Spokes 1 - 4 to Hub 1.
    -  Spokes 21 - 24 to Hub 2.
    -  Hub 1 and Hub 2.
+-  Segmentation:
+   -  Create Domains Red, Blue and Green
+   -  Attach Spokes to Domains, see topology diagram
+   -  Create Domain Connection Policies permitting any-to-any connectivity
 
 ## Explore
 
@@ -94,6 +98,8 @@ Verify connectivity to all other Hub- and Spoke VMs through
 `curl [ip-address]` 
 
 This should return the VM name.
+
+Download and run [loop.bat](https://raw.githubusercontent.com/mddazure/aviatrix-lab/main/lab/loop.bat) on Spoke VM 1 to continuously `curl` the other spokes. This creates flows that can be monitored in CoPilot.
 
 ## Notes
 
