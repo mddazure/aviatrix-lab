@@ -38,20 +38,21 @@ variable "location-hub" {
 variable "location-spoke-1" {
   description = "Location to deploy spoke-1"
   type        = string
-  default     = "Sweden Central"
-  //default = "West Europe"
+  //default     = "Sweden Central"
+  default = "West Europe"
 }
 variable "location-spoke-2" {
   description = "Location to deploy spoke-2"
   type        = string
-  //default     = "Sweden Central"
-  default = "West Europe"
+  default     = "Sweden Central"
+  //default = "West Europe"
 }
 variable "location-spoke-3" {
   description = "Location to deploy spoke-3"
   type        = string
   //default     = "Sweden Central"
-  default = "West Europe"
+  //default = "West Europe"
+  default = "UK South"
 }
 variable "location-spoke-4" {
   description = "Location to deploy spoke-4"
