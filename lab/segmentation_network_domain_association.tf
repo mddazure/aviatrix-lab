@@ -10,7 +10,7 @@ resource "aviatrix_segmentation_network_domain_association" "segmentation_networ
 
 resource "aviatrix_segmentation_network_domain_association" "segmentation_network_domain_association_2" {
     depends_on = [
-      aviatrix_transit_gateway.transit_gw_1,
+      aviatrix_transit_gateway.transit_gw,
       aviatrix_spoke_gateway.spoke_2_gw
     ]
     transit_gateway_name = "transit-gw-hub-1"
@@ -30,7 +30,7 @@ resource "aviatrix_segmentation_network_domain_association" "segmentation_networ
 
 resource "aviatrix_segmentation_network_domain_association" "segmentation_network_domain_association_4" {
     depends_on = [
-      aviatrix_transit_gateway.transit_gw_1,
+      aviatrix_transit_gateway.transit_gw,
       aviatrix_spoke_gateway.spoke_1_gw
     ]
     transit_gateway_name = "transit-gw-hub-1"
@@ -40,7 +40,7 @@ resource "aviatrix_segmentation_network_domain_association" "segmentation_networ
 
 resource "aviatrix_segmentation_network_domain_association" "segmentation_network_domain_association_5" {
     depends_on = [
-      aviatrix_transit_gateway.transit_gw_1,
+      aviatrix_transit_gateway.transit_gw,
       aviatrix_spoke_gateway.spoke_4_gw
     ]
     transit_gateway_name = "transit-gw-hub-1"
@@ -70,7 +70,7 @@ resource "aviatrix_segmentation_network_domain_association" "segmentation_networ
 
 resource "aviatrix_segmentation_network_domain_association" "segmentation_network_domain_association_8" {
     depends_on = [
-      aviatrix_transit_gateway.transit_gw_1,
+      aviatrix_transit_gateway.transit_gw,
       aviatrix_spoke_gateway.spoke_3_gw
     ]
     transit_gateway_name = "transit-gw-hub-1"
