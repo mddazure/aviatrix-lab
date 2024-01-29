@@ -1,11 +1,11 @@
 ############ change to actual values displayed as output of controller deployment ##########
 variable "controller-ip" {
   description   = "public ip of controller"
-  default       = "108.143.8.31"
+  default       = "20.240.43.226"
 }
 variable "copilot-ip" {
   description   = "public ip of copilot"
-  default       = "108.143.8.25"
+  default       = "20.240.135.57"
 }
 variable "account-name"{
   description = "name of azure access account configured on controller"
@@ -15,9 +15,9 @@ variable "account-name"{
 }
 variable "account-name-int"{
   description = "name of azure access account configured on controller"
-  default = "MdD_1_non_prod" //fdpo
+  //default = "MdD_1_non_prod" //fdpo
   // default = "Saros-Security" //sarosio
-  // default = "External_MdD_1"
+  default = "External_MdD_1"
 }
 ############################################################################################
 
@@ -32,14 +32,14 @@ variable "spoke-rg-name" {
 variable "location-hub" {
   description = "Location to deploy hub"
   type        = string
-  //default     = "Sweden Central"
-  default = "West Europe"
+  default     = "Sweden Central"
+  //default = "West Europe"
 }
 variable "location-spoke-1" {
   description = "Location to deploy spoke-1"
   type        = string
-  //default     = "Sweden Central"
-  default = "West Europe"
+  default     = "Sweden Central"
+  //default = "West Europe"
 }
 variable "location-spoke-2" {
   description = "Location to deploy spoke-2"
@@ -57,8 +57,8 @@ variable "location-spoke-3" {
 variable "location-spoke-4" {
   description = "Location to deploy spoke-4"
   type        = string
-  //default     = "Sweden Central"
-  default = "West Europe"
+  default     = "Sweden Central"
+  //default = "West Europe"
 }
 variable "location-hub-2" {
   description = "Location to deploy hub"
@@ -98,7 +98,7 @@ variable "username" {
 variable "password" {
   description = "Virtual Machine password, must meet Azure complexity requirements"
    type        = string
-   default     = "Aviatrix-2022"
+   default     = "Aviatrix-2024"
 }
 
 variable "vmsize" {
