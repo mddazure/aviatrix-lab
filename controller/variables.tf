@@ -13,8 +13,8 @@ variable "controller-rg-name" {
 variable "location-controller" {
   description = "Location to deploy controller"
   type        = string
-  //default     = "swedencentral"
-default = "West Europe"
+  default     = "swedencentral"
+  //default = "West Europe"
 }
 variable "controller_name" {
     description = "name of Aviatrix controller"
@@ -43,8 +43,8 @@ variable "aad-sp-secret" {
   // default = "ghX8Q~DACYuTGz.WCsBeSX2Z~nlkNYBywhd6uajm" //sarosio
   // description = "34e62f82-9e09-4ff6-a809-1c9d1e4f4669" //fdpo
   // description = "0bbaeb0f-8f6c-4ddc-b39b-4ca17d73d68e" //sarosio
-  default =  "7vI8Q~s.HrwMnKLbXxoFisWQKGX3VY_Sdc3JLbsP" // dedroog.net
-  description = "5a85a8d5-f703-4c69-b2a1-f2b7142a7823"
+  default =  "vvn8Q~nflI686CKidC3xoEUfhk2YTA.MtwULudfW" // dedroog.net
+  description = "e9987af8-de9d-4417-8360-55b8de249962"
 }
 variable "aad-sp-id" {
   type = string

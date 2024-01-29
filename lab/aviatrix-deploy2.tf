@@ -8,6 +8,7 @@ resource "aviatrix_transit_gateway" "transit_gw_2" {
   gw_name           = "transit-gw-hub-2"
   allocate_new_eip  = true
   enable_bgp_over_lan = true
+  bgp_lan_interfaces_count = 2
   connected_transit   = true
   enable_advertise_transit_cidr = true
   bgp_ecmp = true
