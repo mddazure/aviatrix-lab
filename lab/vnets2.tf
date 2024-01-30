@@ -332,7 +332,7 @@ resource "azurerm_virtual_machine_extension" "install-iis-hub-2-vm" {
 
    settings = <<SETTINGS
     {
-        "commandToExecute":"powershell -ExecutionPolicy Unrestricted Add-WindowsFeature Web-Server; powershell -ExecutionPolicy Unrestricted Add-Content -Path \"C:\\inetpub\\wwwroot\\Default.htm\" -Value $($env:computername);powershell -ExecutionPolicy Unrestricted Invoke-WebRequest -Uri https://raw.githubusercontent.com/mddazure/aviatrix-lab/main/lab/loop.bat -OutFile 'C:\\Users\\AzureAdmin\\Desktop\\loop.bat'"
+        "commandToExecute":"powershell -ExecutionPolicy Unrestricted Add-WindowsFeature Web-Server; powershell -ExecutionPolicy Unrestricted Add-Content -Path \"C:\\inetpub\\wwwroot\\Default.htm\" -Value $($env:computername)"
     }
 SETTINGS
 }
@@ -343,6 +343,7 @@ resource "azurerm_virtual_machine_extension" "install-loopbat-hub-2-vm" {
   publisher            = "Microsoft.Compute"
   type                 = "CustomScriptExtension"
   type_handler_version = "1.9"
+   depends_on = [ azurerm_virtual_machine_extension.install-iis-hub-2-vm ]
 
    settings = <<SETTINGS
     {
@@ -404,6 +405,7 @@ resource "azurerm_virtual_machine_extension" "install-loopbat-spoke-21-vm" {
   publisher            = "Microsoft.Compute"
   type                 = "CustomScriptExtension"
   type_handler_version = "1.9"
+   depends_on = [ azurerm_virtual_machine_extension.install-iis-spoke-21-vm ]
 
    settings = <<SETTINGS
     {
@@ -465,6 +467,7 @@ resource "azurerm_virtual_machine_extension" "install-loopbat-spoke-22-vm" {
   publisher            = "Microsoft.Compute"
   type                 = "CustomScriptExtension"
   type_handler_version = "1.9"
+   depends_on = [ azurerm_virtual_machine_extension.install-iis-spoke-22-vm ]
 
    settings = <<SETTINGS
     {
@@ -526,6 +529,7 @@ resource "azurerm_virtual_machine_extension" "install-loopbat-spoke-23-vm" {
   publisher            = "Microsoft.Compute"
   type                 = "CustomScriptExtension"
   type_handler_version = "1.9"
+   depends_on = [ azurerm_virtual_machine_extension.install-iis-spoke-23-vm ]
 
    settings = <<SETTINGS
     {
@@ -576,7 +580,22 @@ resource "azurerm_virtual_machine_extension" "install-iis-spoke-24-vm" {
 
    settings = <<SETTINGS
     {
-        "commandToExecute":"powershell -ExecutionPolicy Unrestricted Add-WindowsFeature Web-Server; powershell -ExecutionPolicy Unrestricted Add-Content -Path \"C:\\inetpub\\wwwroot\\Default.htm\" -Value $($env:computername); powershell -ExecutionPolicy Unrestricted Invoke-WebRequest -Uri https://raw.githubusercontent.com/mddazure/aviatrix-lab/main/lab/loop.bat -OutFile 'C:\\Users\\AzureAdmin\\Desktop\\loop.bat'"
+        "commandToExecute":"powershell -ExecutionPolicy Unrestricted Add-WindowsFeature Web-Server; powershell -ExecutionPolicy Unrestricted Add-Content -Path \"C:\\inetpub\\wwwroot\\Default.htm\" -Value $($env:computername)"
+    }
+SETTINGS
+}
+resource "azurerm_virtual_machine_extension" "install-loopbat-spoke-24-vm" {
+    
+  name                 = "install-loopbat-spoke-24-vm"
+  virtual_machine_id   = azurerm_windows_virtual_machine.spoke-24-vm.id
+  publisher            = "Microsoft.Compute"
+  type                 = "CustomScriptExtension"
+  type_handler_version = "1.9"
+   depends_on = [ azurerm_virtual_machine_extension.install-iis-spoke-24-vm ]
+
+   settings = <<SETTINGS
+    {
+        "commandToExecute":"powershell -ExecutionPolicy Unrestricted Invoke-WebRequest -Uri https://raw.githubusercontent.com/mddazure/aviatrix-lab/main/lab/loop.bat -OutFile 'C:\\Users\\AzureAdmin\\Desktop\\loop.bat'"
     }
 SETTINGS
 }

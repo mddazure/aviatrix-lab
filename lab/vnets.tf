@@ -343,6 +343,7 @@ resource "azurerm_virtual_machine_extension" "install-loopbat-hub-1-vm" {
   publisher            = "Microsoft.Compute"
   type                 = "CustomScriptExtension"
   type_handler_version = "1.9"
+   depends_on = [ azurerm_virtual_machine_extension.install-iis-hub-1-vm ]
 
    settings = <<SETTINGS
     {
@@ -404,6 +405,7 @@ resource "azurerm_virtual_machine_extension" "install-loopbat-spoke-1-vm" {
   publisher            = "Microsoft.Compute"
   type                 = "CustomScriptExtension"
   type_handler_version = "1.9"
+   depends_on = [ azurerm_virtual_machine_extension.install-iis-spoke-1-vm ]
 
    settings = <<SETTINGS
     {
@@ -411,6 +413,7 @@ resource "azurerm_virtual_machine_extension" "install-loopbat-spoke-1-vm" {
     }
 SETTINGS
 }
+
 #######################################################################
 ## Create Virtual Machine spoke-2
 #######################################################################
@@ -465,6 +468,7 @@ resource "azurerm_virtual_machine_extension" "install-loopbat-spoke-2-vm" {
   publisher            = "Microsoft.Compute"
   type                 = "CustomScriptExtension"
   type_handler_version = "1.9"
+   depends_on = [ azurerm_virtual_machine_extension.install-iis-spoke-2-vm ]
 
    settings = <<SETTINGS
     {
@@ -526,6 +530,7 @@ resource "azurerm_virtual_machine_extension" "install-loopbat-spoke-3-vm" {
   publisher            = "Microsoft.Compute"
   type                 = "CustomScriptExtension"
   type_handler_version = "1.9"
+  depends_on = [ azurerm_virtual_machine_extension.install-iis-spoke-3-vm ]
 
    settings = <<SETTINGS
     {
@@ -587,6 +592,7 @@ resource "azurerm_virtual_machine_extension" "install-loopbat-spoke-4-vm" {
   publisher            = "Microsoft.Compute"
   type                 = "CustomScriptExtension"
   type_handler_version = "1.9"
+   depends_on = [ azurerm_virtual_machine_extension.install-iis-spoke-4-vm ]
 
    settings = <<SETTINGS
     {
