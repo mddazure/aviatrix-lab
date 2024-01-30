@@ -99,7 +99,7 @@ resource "azurerm_bastion_host" "bastion-spoke-4" {
     subnet_id            = azurerm_subnet.bastion-spoke-4-subnet.id
     public_ip_address_id = azurerm_public_ip.bastion-spoke-4-pubip.id
   }
-}*/
+}
 #######################################################################
 ## Create Bastion Hub
 #######################################################################
@@ -149,4 +149,4 @@ resource "azurerm_bastion_host" "bastion-hub-2" {
     subnet_id            = azurerm_subnet.bastion-hub-2-subnet.id
     public_ip_address_id = azurerm_public_ip.bastion-hub-2-pubip.id
   }
-}
+}*/

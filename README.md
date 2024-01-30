@@ -35,9 +35,13 @@ Open variables.tf in the vi editor:
 Change the variable "incoming_ssl_cidr" to the public ip address the machine you will be accessing the controller with. Save and quit vi with `:wq`.
 
 Initialize Terraform:
-`Terraform init`
+
+`terraform init`
+
 Apply:
-`Terraform apply`
+
+`terraform apply`
+
 After deployment, copy the Controller public and private ip addresses and the CoPilot public ip address from the Terraform output.
 
 Access the Controller from a browser on https://[controller-public-ip].
@@ -54,16 +58,13 @@ When the Controller is configured, you are ready to deploy the Lab.
 Change directory:
 `cd ../lab`
 
-Open variables.tf in the vi editor:
-
-`vi variables.tf`
-
-Change the variables "controller-ip" and "copilot-ip" to the actual values displayed in the output of the controller deployment. Save and quit vi with `:wq`.
-
 Initialize Terraform:
-`Terraform init`
+
+`terraform init`
+
 Apply:
-`Terraform apply`
+
+`terraform apply`
 
 The lab deployment does this:
 -  Create 2 Hub- and 8 Spoke VNETs, each with a Windows Server 2022 VM running a simple web server. This returns the VM machine name when accessed over http at its private ip address (e.g. `curl 10.1.1.4` to Spoke 1 returns "spoke-1-vm").
@@ -91,11 +92,16 @@ The Spokes will show connected to their respective Transit Gateways.
 
 ![image](images/spoke-gws.png)
 
-Connect to Spoke VM 1 via Bastion. 
+Connect to Spoke VM 1 via Bastion.
+
+Username: ```AzureAdmin```
+
+Password: ```Aviatrix-2024```
+
 
 Verify connectivity to all other Hub- and Spoke VMs through
 
-`curl [ip-address]` 
+```curl [ip-address]``` 
 
 This should return the VM name.
 
