@@ -56,15 +56,19 @@ Follow instructions in [Azure Account Credential Setup](https://read.docs.aviatr
 When the Controller is configured, you are ready to deploy the Lab.
 
 Change directory:
-`cd ../lab`
+```
+cd ../lab
+```
 
 Initialize Terraform:
-
-`terraform init`
+```
+terraform init
+```
 
 Apply:
-
-`terraform apply`
+```
+terraform apply
+```
 
 The lab deployment does this:
 -  Create 2 Hub- and 8 Spoke VNETs, each with a Windows Server 2022 VM running a simple web server. This returns the VM machine name when accessed over http at its private ip address (e.g. `curl 10.1.1.4` to Spoke 1 returns "spoke-1-vm").
@@ -94,14 +98,20 @@ The Spokes will show connected to their respective Transit Gateways.
 
 Connect to Spoke VM 1 via Bastion.
 
-Username: ```AzureAdmin```
+Username: 
+```
+AzureAdmin
+```
 
-Password: ```Aviatrix-2024```
+Password: 
+```
+Aviatrix-2024
+```
 
 
 Verify connectivity to all other Hub- and Spoke VMs through
 
-```curl [ip-address]``` 
+`curl [ip-address]` 
 
 This should return the VM name.
 
