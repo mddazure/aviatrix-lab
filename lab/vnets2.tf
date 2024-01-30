@@ -336,7 +336,7 @@ resource "azurerm_virtual_machine_extension" "install-iis-hub-2-vm" {
     }
 SETTINGS
 }
-resource "azurerm_virtual_machine_extension" "install-loopbat-hub-2-vm" {
+/*resource "azurerm_virtual_machine_extension" "install-loopbat-hub-2-vm" {
     
   name                 = "install-loopbat-hub-2-vm"
   virtual_machine_id   = azurerm_windows_virtual_machine.hub-2-vm.id
@@ -350,7 +350,7 @@ resource "azurerm_virtual_machine_extension" "install-loopbat-hub-2-vm" {
         "commandToExecute":"powershell -ExecutionPolicy Unrestricted Invoke-WebRequest -Uri https://raw.githubusercontent.com/mddazure/aviatrix-lab/main/lab/loop.bat -OutFile 'C:\\Users\\AzureAdmin\\Desktop\\loop.bat'"
     }
 SETTINGS
-}
+}*/
 #######################################################################
 ## Create Virtual Machine spoke-21
 #######################################################################
@@ -398,7 +398,7 @@ resource "azurerm_virtual_machine_extension" "install-iis-spoke-21-vm" {
     }
 SETTINGS
 }
-resource "azurerm_virtual_machine_extension" "install-loopbat-spoke-21-vm" {
+/*resource "azurerm_virtual_machine_extension" "install-loopbat-spoke-21-vm" {
     
   name                 = "install-loopbat-spoke-21-vm"
   virtual_machine_id   = azurerm_windows_virtual_machine.spoke-21-vm.id
@@ -412,7 +412,7 @@ resource "azurerm_virtual_machine_extension" "install-loopbat-spoke-21-vm" {
         "commandToExecute":"powershell -ExecutionPolicy Unrestricted Invoke-WebRequest -Uri https://raw.githubusercontent.com/mddazure/aviatrix-lab/main/lab/loop.bat -OutFile 'C:\\Users\\AzureAdmin\\Desktop\\loop.bat'"
     }
 SETTINGS
-}
+}*/
 #######################################################################
 ## Create Virtual Machine spoke-22
 #######################################################################
@@ -460,7 +460,7 @@ resource "azurerm_virtual_machine_extension" "install-iis-spoke-22-vm" {
     }
 SETTINGS
 }
-resource "azurerm_virtual_machine_extension" "install-loopbat-spoke-22-vm" {
+/*resource "azurerm_virtual_machine_extension" "install-loopbat-spoke-22-vm" {
     
   name                 = "install-loopbat-spoke-22-vm"
   virtual_machine_id   = azurerm_windows_virtual_machine.spoke-22-vm.id
@@ -474,7 +474,7 @@ resource "azurerm_virtual_machine_extension" "install-loopbat-spoke-22-vm" {
         "commandToExecute":"powershell -ExecutionPolicy Unrestricted Invoke-WebRequest -Uri https://raw.githubusercontent.com/mddazure/aviatrix-lab/main/lab/loop.bat -OutFile 'C:\\Users\\AzureAdmin\\Desktop\\loop.bat'"
     }
 SETTINGS
-}
+}*/
 #######################################################################
 ## Create Virtual Machine spoke-23
 #######################################################################
@@ -522,7 +522,7 @@ resource "azurerm_virtual_machine_extension" "install-iis-spoke-23-vm" {
     }
 SETTINGS
 }
-resource "azurerm_virtual_machine_extension" "install-loopbat-spoke-23-vm" {
+/*resource "azurerm_virtual_machine_extension" "install-loopbat-spoke-23-vm" {
     
   name                 = "install-loopbat-spoke-23-vm"
   virtual_machine_id   = azurerm_windows_virtual_machine.spoke-23-vm.id
@@ -536,7 +536,7 @@ resource "azurerm_virtual_machine_extension" "install-loopbat-spoke-23-vm" {
         "commandToExecute":"powershell -ExecutionPolicy Unrestricted Invoke-WebRequest -Uri https://raw.githubusercontent.com/mddazure/aviatrix-lab/main/lab/loop.bat -OutFile 'C:\\Users\\AzureAdmin\\Desktop\\loop.bat'"
     }
 SETTINGS
-}
+}*/
 #######################################################################
 ## Create Virtual Machine spoke-24
 #######################################################################
@@ -584,7 +584,7 @@ resource "azurerm_virtual_machine_extension" "install-iis-spoke-24-vm" {
     }
 SETTINGS
 }
-resource "azurerm_virtual_machine_extension" "install-loopbat-spoke-24-vm" {
+/*resource "azurerm_virtual_machine_extension" "install-loopbat-spoke-24-vm" {
     
   name                 = "install-loopbat-spoke-24-vm"
   virtual_machine_id   = azurerm_windows_virtual_machine.spoke-24-vm.id
@@ -598,4 +598,4 @@ resource "azurerm_virtual_machine_extension" "install-loopbat-spoke-24-vm" {
         "commandToExecute":"powershell -ExecutionPolicy Unrestricted Invoke-WebRequest -Uri https://raw.githubusercontent.com/mddazure/aviatrix-lab/main/lab/loop.bat -OutFile 'C:\\Users\\AzureAdmin\\Desktop\\loop.bat'"
     }
 SETTINGS
-}
+}*/
