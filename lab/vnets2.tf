@@ -572,7 +572,7 @@ resource "azurerm_windows_virtual_machine" "spoke-24-vm" {
 }
 resource "azurerm_virtual_machine_extension" "install-iis-spoke-24-vm" {
     
-  name                 = "install-iis-spoke-4-vm"
+  name                 = "install-iis-spoke-24-vm"
   virtual_machine_id   = azurerm_windows_virtual_machine.spoke-24-vm.id
   publisher            = "Microsoft.Compute"
   type                 = "CustomScriptExtension"
