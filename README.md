@@ -12,35 +12,44 @@ It is deployed through Terraform consists of three parts:
 Log in to Azure Cloud Shell at https://shell.azure.com/ and select Bash.
 
 Ensure Azure CLI and extensions are up to date:
-  
-`az upgrade --yes`
+```
+az upgrade --yes
+```
   
 If necessary select your target subscription:
-  
-`az account set --subscription <Name or ID of subscription>`
+```
+az account set --subscription <Name or ID of subscription>
+```
   
 Clone the  GitHub repository:
-`git clone https://github.com/mddazure/aviatrix-lab`
+```
+git clone https://github.com/mddazure/aviatrix-lab
+```
 
 ### Controller and CoPilot
 First deploy Controller and CoPilot. These are placed in a separate isolated VNET.
 Change directory:
-
- `cd aviatrix-lab/controller`
+ ```
+cd aviatrix-lab/controller
+```
 
 Open variables.tf in the vi editor:
-
-`vi variables.tf`
+```
+vi variables.tf
+```
 
 Change the variable "incoming_ssl_cidr" to the public ip address the machine you will be accessing the controller with. Save and quit vi with `:wq`.
 
 Initialize Terraform:
 
-`terraform init`
+```
+terraform init
+```
 
 Apply:
-
-`terraform apply`
+```
+terraform apply
+```
 
 After deployment, copy the Controller public and private ip addresses and the CoPilot public ip address from the Terraform output.
 
@@ -116,6 +125,10 @@ Verify connectivity to all other Hub- and Spoke VMs through
 This should return the VM name.
 
 Download and run [loop.bat](https://raw.githubusercontent.com/mddazure/aviatrix-lab/main/lab/loop.bat) on Spoke VM 1 to continuously `curl` the other spokes. This creates flows that can be monitored in CoPilot.
+From a command prompt, run this Powershell command:
+```
+powershell -ExecutionPolicy Unrestricted Invoke-WebRequest -Uri https://raw.githubusercontent.com/mddazure/aviatrix-lab/main/lab/loop.bat -OutFile 'C:\\Users\\AzureAdmin\\Desktop\\loop.bat'
+```
 
 ![image](images/loop.bat.png)
 
